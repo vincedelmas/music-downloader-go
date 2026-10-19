@@ -1,13 +1,14 @@
 package main
 
 import (
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/test"
-	"fyne.io/fyne/v2/widget"
 	"image/png"
 	"os"
 	"path/filepath"
 	"testing"
+
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/test"
+	"fyne.io/fyne/v2/widget"
 )
 
 func TestBrowserNavigationAndSelection(t *testing.T) {
@@ -21,18 +22,23 @@ func TestBrowserNavigationAndSelection(t *testing.T) {
 	if err != nil || len(entries) != 1 || !entries[0].directory {
 		t.Fatalf("entries=%+v, %v", entries, err)
 	}
+
 	entries, err = readBrowserEntries(root, true)
 	if err != nil || len(entries) != 2 {
 		t.Fatalf("hidden entries=%+v, %v", entries, err)
 	}
+
 	a := test.NewApp()
 	a.Settings().SetTheme(newDesktopTheme())
 	defer a.Quit()
 	selected := ""
-	w := browsePath(a, root, false, func(p string) { selected = p })
+	w := browsePath(a, root, false, func(p string) {
+		selected = p
+	})
 	if w.FixedSize() {
 		t.Fatal("file browser must be resizable")
 	}
+
 	w.Resize(fyne.NewSize(1100, 760))
 	if os.Getenv("MUSIC_DOWNLOADER_SCREENSHOT") != "" {
 		f, err := os.Create(filepath.Join(os.TempDir(), "music-downloader-browser.png"))
@@ -63,10 +69,12 @@ func TestBrowserNavigationAndSelection(t *testing.T) {
 	if list == nil || choose == nil {
 		t.Fatal("file browser controls missing")
 	}
+
 	list.Select(0) // Directories sort first; clicking opens Music.
 	if list.Length() != 1 {
 		t.Fatalf("did not enter Music folder, %d items", list.Length())
 	}
+
 	list.Select(0)
 	test.Tap(choose)
 	if selected != file {
@@ -74,12 +82,15 @@ func TestBrowserNavigationAndSelection(t *testing.T) {
 	}
 	// Folder mode chooses the current directory without requiring a child folder.
 	selected = ""
-	folderWindow := browsePath(a, sub, true, func(p string) { selected = p })
+	folderWindow := browsePath(a, sub, true, func(p string) {
+		selected = p
+	})
 	var selectFolder func(fyne.CanvasObject)
 	selectFolder = func(o fyne.CanvasObject) {
 		if b, ok := o.(*widget.Button); ok && b.Text == "Choose this folder" {
 			test.Tap(b)
 		}
+
 		if c, ok := o.(*fyne.Container); ok {
 			for _, child := range c.Objects {
 				selectFolder(child)

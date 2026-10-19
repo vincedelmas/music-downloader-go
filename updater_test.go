@@ -19,7 +19,10 @@ import (
 
 type transportFunc func(*http.Request) (*http.Response, error)
 
-func (f transportFunc) RoundTrip(r *http.Request) (*http.Response, error) { return f(r) }
+func (f transportFunc) RoundTrip(r *http.Request) (*http.Response, error) {
+	return f(r)
+}
+
 func TestToolUpdateIsTransactional(t *testing.T) {
 	root := t.TempDir()
 	t.Setenv("HOME", root)
@@ -28,6 +31,7 @@ func TestToolUpdateIsTransactional(t *testing.T) {
 	if err != nil {
 		t.Skip(err)
 	}
+
 	script := []byte("#!/bin/sh\nexit 0\n")
 	var zipBody bytes.Buffer
 	zw := zip.NewWriter(&zipBody)
@@ -43,6 +47,7 @@ func TestToolUpdateIsTransactional(t *testing.T) {
 				http.Error(w, "broken upstream", 500)
 				return
 			}
+
 			if name == deno {
 				w.Write(zipBody.Bytes())
 			} else if strings.HasSuffix(name, ".LICENSE") || strings.HasSuffix(name, ".README") {
@@ -50,8 +55,10 @@ func TestToolUpdateIsTransactional(t *testing.T) {
 			} else {
 				w.Write(script)
 			}
+
 			return
 		}
+
 		var names []string
 		switch {
 		case strings.Contains(r.URL.Path, "yt-dlp/yt-dlp"):
@@ -64,10 +71,12 @@ func TestToolUpdateIsTransactional(t *testing.T) {
 			http.NotFound(w, r)
 			return
 		}
+
 		rel := githubRelease{Tag: "test"}
 		for _, n := range names {
 			rel.Assets = append(rel.Assets, releaseAsset{Name: n, URL: server.URL + "/assets/" + n})
 		}
+
 		json.NewEncoder(w).Encode(rel)
 	}))
 	defer server.Close()
@@ -82,41 +91,52 @@ func TestToolUpdateIsTransactional(t *testing.T) {
 			u.Host = strings.TrimPrefix(server.URL, "https://")
 			r.URL = &u
 		}
+
 		return transport.RoundTrip(r)
 	})
 	downloadClient = client
-	defer func() { downloadClient = old }()
+	defer func() {
+		downloadClient = old
+	}()
 	data, _ := dataDir()
 	if err = os.MkdirAll(data, 0700); err != nil {
 		t.Fatal(err)
 	}
+
 	pointer := filepath.Join(data, "tools-current.json")
 	previous := []byte(`{"directory":"set-previous"}`)
 	if err = os.WriteFile(pointer, previous, 0600); err != nil {
 		t.Fatal(err)
 	}
+
 	if err = updateTools(context.Background(), func(string) {}); err == nil {
 		t.Fatal("broken upstream should fail")
 	}
+
 	after, _ := os.ReadFile(pointer)
 	if string(after) != string(previous) {
 		t.Fatal("failed update changed active tools")
 	}
+
 	entries, _ := os.ReadDir(filepath.Join(data, "tools"))
 	if len(entries) != 0 {
 		t.Fatal("failed update leaked partial tools")
 	}
+
 	fail = false
 	if err = updateTools(context.Background(), func(string) {}); err != nil {
 		t.Fatal(err)
 	}
+
 	tools, err := resolveTools()
 	if err != nil {
 		t.Fatal(err)
 	}
+
 	if !strings.HasPrefix(tools.YtDlp, filepath.Join(data, "tools")) {
 		t.Fatalf("new tools not activated: %+v", tools)
 	}
+
 	if _, err = os.Stat(filepath.Join(filepath.Dir(tools.YtDlp), "versions.json")); err != nil {
 		t.Fatal("missing version manifest:", err)
 	}

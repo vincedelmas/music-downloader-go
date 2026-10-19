@@ -19,9 +19,15 @@ func main() {
 			fmt.Println(version)
 			return
 		case "--help", "-h":
-			fmt.Println("Music Downloader\nLaunch without arguments to open the desktop app.\n--install  Install app and launcher for the current Linux user\n--version  Print the application version")
+			fmt.Println(
+				"Music Downloader\n" +
+					"Launch without arguments to open the desktop app.\n" +
+					"--install  Install app and launcher for the current Linux user\n" +
+					"--version  Print the application version",
+			)
 			return
 		}
 	}
+
 	runDesktop()
 }

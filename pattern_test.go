@@ -20,22 +20,32 @@ func TestNamePatterns(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
+
 			a, title, err := p.parse(tt.name)
 			if err != nil || a != tt.artist || title != tt.title {
 				t.Fatalf("%s / %s / %v", a, title, err)
 			}
 		})
 	}
-	for _, pattern := range []string{"{title}", "{artist}{title}", "{artist} - {title", "{{artist}} - {title}", "{artist} - {title} - {artist}"} {
+
+	for _, pattern := range []string{
+		"{title}",
+		"{artist}{title}",
+		"{artist} - {title",
+		"{{artist}} - {title}",
+		"{artist} - {title} - {artist}",
+	} {
 		if _, err := compileNamePattern(pattern); err == nil {
 			t.Errorf("accepted invalid pattern %s", pattern)
 		}
 	}
+
 	p, _ := compileNamePattern("{artist} - {title}")
 	if _, _, err := p.parse("No separator"); err == nil {
 		t.Fatal("unmatched name accepted")
 	}
 }
+
 func TestMigrateLegacySettings(t *testing.T) {
 	root := t.TempDir()
 	t.Setenv("HOME", root)
@@ -43,17 +53,24 @@ func TestMigrateLegacySettings(t *testing.T) {
 	t.Setenv("APPDATA", root)
 	dir, _ := configDir()
 	os.MkdirAll(dir, 0700)
-	os.WriteFile(filepath.Join(dir, "config.json"), []byte(`{"music_separator":" | ","title_position":0,"artist_position":1,"spotify_client_secret":"old-secret"}`), 0600)
+	os.WriteFile(
+		filepath.Join(dir, "config.json"),
+		[]byte(`{"music_separator":" | ","title_position":0,"artist_position":1,"spotify_client_secret":"old-secret"}`),
+		0600,
+	)
 	c, err := loadConfig()
 	if err != nil {
 		t.Fatal(err)
 	}
+
 	if c.NamePattern != "{title} | {artist}" || !c.FetchMetadata {
 		t.Fatalf("migration: %+v", c)
 	}
+
 	if err = saveConfig(c); err != nil {
 		t.Fatal(err)
 	}
+
 	data, _ := os.ReadFile(filepath.Join(dir, "config.json"))
 	if strings.Contains(string(data), "spotify") {
 		t.Fatal("old credentials retained after saving")

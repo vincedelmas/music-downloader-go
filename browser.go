@@ -15,8 +15,9 @@ import (
 )
 
 type browserEntry struct {
-	name, path string
-	directory  bool
+	name      string
+	path      string
+	directory bool
 }
 
 func readBrowserEntries(dir string, hidden bool) ([]browserEntry, error) {
@@ -24,25 +25,31 @@ func readBrowserEntries(dir string, hidden bool) ([]browserEntry, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	entries := make([]browserEntry, 0, len(nodes))
 	for _, n := range nodes {
 		if !hidden && strings.HasPrefix(n.Name(), ".") {
 			continue
 		}
+
 		path := filepath.Join(dir, n.Name())
 		info, err := os.Stat(path)
 		if err != nil {
 			continue
 		}
+
 		if !info.IsDir() && !info.Mode().IsRegular() {
 			continue
 		}
+
 		entries = append(entries, browserEntry{n.Name(), path, info.IsDir()})
 	}
+
 	sort.Slice(entries, func(i, j int) bool {
 		if entries[i].directory != entries[j].directory {
 			return entries[i].directory
 		}
+
 		return strings.ToLower(entries[i].name) < strings.ToLower(entries[j].name)
 	})
 	return entries, nil
@@ -54,6 +61,7 @@ func browsePath(a fyne.App, initial string, foldersOnly bool, chosen func(string
 	if foldersOnly {
 		title = "Choose music folder"
 	}
+
 	w := a.NewWindow(title)
 	w.Resize(fyne.NewSize(880, 600))
 	path := widget.NewEntry()
@@ -77,7 +85,10 @@ func browsePath(a fyne.App, initial string, foldersOnly bool, chosen func(string
 	} else {
 		choose.Disable()
 	}
-	list := widget.NewList(func() int { return len(entries) }, func() fyne.CanvasObject {
+
+	list := widget.NewList(func() int {
+		return len(entries)
+	}, func() fyne.CanvasObject {
 		return container.NewBorder(nil, nil, widget.NewIcon(theme.DocumentIcon()), nil, widget.NewLabel(""))
 	}, func(i widget.ListItemID, o fyne.CanvasObject) {
 		row := o.(*fyne.Container)
@@ -86,6 +97,7 @@ func browsePath(a fyne.App, initial string, foldersOnly bool, chosen func(string
 		if entries[i].directory {
 			icon = theme.FolderIcon()
 		}
+
 		row.Objects[1].(*widget.Icon).SetResource(icon)
 	})
 	var navigate func(string)
@@ -95,11 +107,13 @@ func browsePath(a fyne.App, initial string, foldersOnly bool, chosen func(string
 			dialog.ShowError(err, w)
 			return
 		}
+
 		next, err := readBrowserEntries(abs, showHidden.Checked)
 		if err != nil {
 			dialog.ShowError(err, w)
 			return
 		}
+
 		list.UnselectAll()
 		entries = next
 		current = abs
@@ -112,28 +126,38 @@ func browsePath(a fyne.App, initial string, foldersOnly bool, chosen func(string
 		} else {
 			choose.Disable()
 		}
+
 		list.Refresh()
 	}
 	list.OnSelected = func(i widget.ListItemID) {
 		if i < 0 || i >= len(entries) {
 			return
 		}
+
 		entry := entries[i]
 		if entry.directory {
 			navigate(entry.path)
 			return
 		}
+
 		if foldersOnly {
 			return
 		}
+
 		selected = entry.path
 		description.SetText(entry.name)
 		choose.Enable()
 	}
 	path.OnSubmitted = navigate
-	up := widget.NewButtonWithIcon("", theme.NavigateBackIcon(), func() { navigate(filepath.Dir(current)) })
-	goTo := widget.NewButton("Go", func() { navigate(path.Text) })
-	showHidden.OnChanged = func(bool) { navigate(current) }
+	up := widget.NewButtonWithIcon("", theme.NavigateBackIcon(), func() {
+		navigate(filepath.Dir(current))
+	})
+	goTo := widget.NewButton("Go", func() {
+		navigate(path.Text)
+	})
+	showHidden.OnChanged = func(bool) {
+		navigate(current)
+	}
 	cancel := widget.NewButton("Cancel", w.Close)
 	footer := container.NewBorder(nil, nil, description, container.NewHBox(cancel, choose))
 	top := container.NewVBox(container.NewBorder(nil, nil, up, goTo, path), showHidden)
@@ -142,17 +166,21 @@ func browsePath(a fyne.App, initial string, foldersOnly bool, chosen func(string
 	if info, err := os.Stat(start); err == nil && !info.IsDir() {
 		start = filepath.Dir(start)
 	}
+
 	for {
 		if info, err := os.Stat(start); err == nil && info.IsDir() {
 			break
 		}
+
 		parent := filepath.Dir(start)
 		if parent == start || start == "" || start == "." {
 			start, _ = os.UserHomeDir()
 			break
 		}
+
 		start = parent
 	}
+
 	navigate(start)
 	w.Show()
 	return w

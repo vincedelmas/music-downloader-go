@@ -20,23 +20,27 @@ import (
 )
 
 func runDesktop() {
-	a := app.NewWithID(appID)
-	buildDesktop(a).ShowAndRun()
+	application := app.NewWithID(appID)
+	buildDesktop(application).ShowAndRun()
 }
-func buildDesktop(a fyne.App) fyne.Window {
-	a.SetIcon(appIcon)
-	a.Settings().SetTheme(newDesktopTheme())
-	w := a.NewWindow("Music Downloader")
-	w.Resize(fyne.NewSize(1040, 780))
-	w.SetMaster()
-	c, loadErr := loadConfig()
+
+func buildDesktop(application fyne.App) fyne.Window {
+	application.SetIcon(appIcon)
+	application.Settings().SetTheme(newDesktopTheme())
+	window := application.NewWindow("Music Downloader")
+	window.Resize(fyne.NewSize(1040, 780))
+	window.SetMaster()
+	config, loadErr := loadConfig()
 	status := widget.NewLabel("Load your bookmarks to get started.")
 	status.Wrapping = fyne.TextWrapWord
 	progress := widget.NewProgressBar()
+	// Downloads, selection, and progress.
 	var tracks []Track
 	var rows []string
 	var details []string
-	list := widget.NewList(func() int { return len(rows) }, func() fyne.CanvasObject {
+	list := widget.NewList(func() int {
+		return len(rows)
+	}, func() fyne.CanvasObject {
 		name := widget.NewLabel("")
 		name.TextStyle.Bold = true
 		name.Truncation = fyne.TextTruncateEllipsis
@@ -50,6 +54,7 @@ func buildDesktop(a fyne.App) fyne.Window {
 		if len(parts) > 1 {
 			name = parts[1]
 		}
+
 		row.Objects[0].(*widget.Label).SetText(name)
 		row.Objects[2].(*widget.Label).SetText(parts[0])
 		row.Refresh()
@@ -57,8 +62,14 @@ func buildDesktop(a fyne.App) fyne.Window {
 	detail := widget.NewLabel("Select a track for details.")
 	detail.Wrapping = fyne.TextWrapWord
 	selected := -1
-	list.OnSelected = func(i widget.ListItemID) { selected = i; detail.SetText(details[i]) }
-	list.OnUnselected = func(widget.ListItemID) { selected = -1; detail.SetText("Select a track for details.") }
+	list.OnSelected = func(i widget.ListItemID) {
+		selected = i
+		detail.SetText(details[i])
+	}
+	list.OnUnselected = func(widget.ListItemID) {
+		selected = -1
+		detail.SetText("Select a track for details.")
+	}
 	var cancel context.CancelFunc
 	busy := false
 	var controls []fyne.Disableable
@@ -72,13 +83,16 @@ func buildDesktop(a fyne.App) fyne.Window {
 			}
 		}
 	}
-	showErr := func(err error) { dialog.ShowError(err, w) }
+	showErr := func(err error) {
+		dialog.ShowError(err, window)
+	}
 	openPath := func(path string) {
 		u := &url.URL{Scheme: "file", Path: filepath.ToSlash(path)}
 		if !strings.HasPrefix(u.Path, "/") {
 			u.Path = "/" + u.Path
 		}
-		if err := a.OpenURL(u); err != nil {
+
+		if err := application.OpenURL(u); err != nil {
 			showErr(err)
 		}
 	}
@@ -91,17 +105,19 @@ func buildDesktop(a fyne.App) fyne.Window {
 	stop.Disable()
 	load := widget.NewButtonWithIcon("Load bookmarks", theme.ViewRefreshIcon(), func() {
 		var err error
-		tracks, err = parseBookmarks(c)
+		tracks, err = parseBookmarks(config)
 		if err != nil {
 			showErr(err)
 			return
 		}
+
 		rows = make([]string, len(tracks))
 		details = make([]string, len(tracks))
 		for i, t := range tracks {
 			rows[i] = "Queued  ·  " + t.Name
 			details[i] = t.URL
 		}
+
 		list.UnselectAll()
 		list.Refresh()
 		progress.SetValue(0)
@@ -112,15 +128,18 @@ func buildDesktop(a fyne.App) fyne.Window {
 			showErr(fmt.Errorf("load your bookmarks first"))
 			return
 		}
-		if err := c.Validate(); err != nil {
+
+		if err := config.Validate(); err != nil {
 			showErr(err)
 			return
 		}
+
 		tools, err := resolveTools()
 		if err != nil {
 			showErr(err)
 			return
 		}
+
 		ctx, cancelDownload := context.WithCancel(context.Background())
 		cancel = cancelDownload
 		setBusy(true)
@@ -131,7 +150,8 @@ func buildDesktop(a fyne.App) fyne.Window {
 		} else {
 			status.SetText("Downloading…")
 		}
-		cfg := c
+
+		cfg := config
 		batch := append([]Track(nil), tracks...)
 		go func() {
 			defer cancelDownload()
@@ -147,11 +167,13 @@ func buildDesktop(a fyne.App) fyne.Window {
 					if selected == e.Index {
 						detail.SetText(e.Detail)
 					}
+
 					switch e.State {
 					case "Completed", "Updated", "Saved with warning", "Skipped", "Failed", "Cancelled":
 						done++
 						progress.SetValue(float64(done) / float64(len(batch)))
 					}
+
 					status.SetText(fmt.Sprintf("%d / %d finished", done, len(batch)))
 				})
 			}
@@ -162,6 +184,7 @@ func buildDesktop(a fyne.App) fyne.Window {
 			} else {
 				err = d.process(ctx, batch, emit)
 			}
+
 			fyne.Do(func() {
 				setBusy(false)
 				stop.Disable()
@@ -178,22 +201,38 @@ func buildDesktop(a fyne.App) fyne.Window {
 			})
 		}()
 	}
-	start := widget.NewButtonWithIcon("Download", theme.DownloadIcon(), func() { runBatch(false) })
-	refreshDetails := widget.NewButtonWithIcon("Refresh song details", theme.ViewRefreshIcon(), func() { runBatch(true) })
+	start := widget.NewButtonWithIcon("Download", theme.DownloadIcon(), func() {
+		runBatch(false)
+	})
+	refreshDetails := widget.NewButtonWithIcon("Refresh song details", theme.ViewRefreshIcon(), func() {
+		runBatch(true)
+	})
 	start.Importance = widget.HighImportance
 	openMusic := widget.NewButtonWithIcon("Open music folder", theme.FolderOpenIcon(), func() {
-		if err := os.MkdirAll(c.MusicDirectory, 0755); err != nil {
+		if err := os.MkdirAll(config.MusicDirectory, 0755); err != nil {
 			showErr(err)
 			return
 		}
-		openPath(c.MusicDirectory)
-	})
-	downloads := container.NewBorder(container.NewVBox(pageHeading("Your music", "Download from your bookmark collection."), container.NewHBox(load, start, refreshDetails, openMusic), progress), container.NewVBox(widget.NewSeparator(), detail), nil, nil, list)
 
+		openPath(config.MusicDirectory)
+	})
+	downloads := container.NewBorder(
+		container.NewVBox(
+			pageHeading("Your music", "Download from your bookmark collection."),
+			container.NewHBox(load, start, refreshDetails, openMusic),
+			progress,
+		),
+		container.NewVBox(widget.NewSeparator(), detail),
+		nil,
+		nil,
+		list,
+	)
+
+	// Bookmark source and naming preferences.
 	bookmark := widget.NewEntry()
-	bookmark.SetText(c.BookmarkPath)
+	bookmark.SetText(config.BookmarkPath)
 	music := widget.NewEntry()
-	music.SetText(c.MusicDirectory)
+	music.SetText(config.MusicDirectory)
 	folder := widget.NewSelect(nil, nil)
 	folderPositions := make(map[string]int)
 	refreshFolderChoices := func() error {
@@ -201,6 +240,7 @@ func buildDesktop(a fyne.App) fyne.Window {
 		if err != nil {
 			return err
 		}
+
 		folder.ClearSelected()
 		folder.Options = nil
 		folderPositions = make(map[string]int)
@@ -209,24 +249,29 @@ func buildDesktop(a fyne.App) fyne.Window {
 			if len(parts) != 2 {
 				continue
 			}
+
 			index, err := strconv.Atoi(parts[0])
 			if err != nil {
 				continue
 			}
+
 			name := parts[1]
 			base := name
 			for count := 2; ; count++ {
 				if _, exists := folderPositions[name]; !exists {
 					break
 				}
+
 				name = fmt.Sprintf("%s (%d)", base, count)
 			}
+
 			folder.Options = append(folder.Options, name)
 			folderPositions[name] = index
-			if index == c.BookmarkPosition {
+			if index == config.BookmarkPosition {
 				folder.SetSelected(name)
 			}
 		}
+
 		folder.Refresh()
 		return nil
 	}
@@ -236,15 +281,32 @@ func buildDesktop(a fyne.App) fyne.Window {
 		}
 	}
 	scan := widget.NewButtonWithIcon("", theme.ViewRefreshIcon(), refreshFolders)
-	bookmark.OnChanged = func(string) { folder.ClearSelected(); folder.Options = nil; folder.Refresh() }
-	bookmark.OnSubmitted = func(string) { refreshFolders() }
+	bookmark.OnChanged = func(string) {
+		folder.ClearSelected()
+		folder.Options = nil
+		folder.Refresh()
+	}
+	bookmark.OnSubmitted = func(string) {
+		refreshFolders()
+	}
 	selectFile := widget.NewButtonWithIcon("Browse…", theme.FolderOpenIcon(), func() {
-		browsePath(a, bookmark.Text, false, func(path string) { bookmark.SetText(path); refreshFolders() })
+		browsePath(application, bookmark.Text, false, func(path string) {
+			bookmark.SetText(path)
+			refreshFolders()
+		})
 	})
-	selectDir := widget.NewButtonWithIcon("Browse…", theme.FolderOpenIcon(), func() { browsePath(a, music.Text, true, func(path string) { music.SetText(path) }) })
+	selectDir := widget.NewButtonWithIcon(
+		"Browse…",
+		theme.FolderOpenIcon(),
+		func() {
+			browsePath(application, music.Text, true, func(path string) {
+				music.SetText(path)
+			})
+		},
+	)
 
 	pattern := widget.NewEntry()
-	pattern.SetText(c.NamePattern)
+	pattern.SetText(config.NamePattern)
 	pattern.SetPlaceHolder("{artist} - {title}")
 	example := widget.NewEntry()
 	example.SetText("Daft Punk - One More Time")
@@ -256,24 +318,30 @@ func buildDesktop(a fyne.App) fyne.Window {
 			preview.SetText(err.Error())
 			return
 		}
+
 		artist, title, err := p.parse(example.Text)
 		if err != nil {
 			preview.SetText("This name doesn't match the pattern.")
 			return
 		}
+
 		preview.SetText("Artist: " + artist + "   •   Title: " + title)
 	}
-	pattern.OnChanged = func(string) { updatePreview() }
-	example.OnChanged = func(string) { updatePreview() }
+	pattern.OnChanged = func(string) {
+		updatePreview()
+	}
+	example.OnChanged = func(string) {
+		updatePreview()
+	}
 	updatePreview()
 	metadata := widget.NewCheck("Add song details and album artwork", nil)
-	metadata.SetChecked(c.FetchMetadata)
+	metadata.SetChecked(config.FetchMetadata)
 	concurrent := widget.NewSelect([]string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}, nil)
-	concurrent.SetSelected(strconv.Itoa(c.MaxConcurrent))
+	concurrent.SetSelected(strconv.Itoa(config.MaxConcurrent))
 	quality := widget.NewSelect([]string{"128k", "192k", "256k", "320k"}, nil)
-	quality.SetSelected(c.AudioQuality)
+	quality.SetSelected(config.AudioQuality)
 	save := widget.NewButtonWithIcon("Save settings", theme.DocumentSaveIcon(), func() {
-		next := c
+		next := config
 		next.BookmarkPath = strings.TrimSpace(bookmark.Text)
 		next.MusicDirectory = strings.TrimSpace(music.Text)
 		next.NamePattern = pattern.Text
@@ -282,11 +350,13 @@ func buildDesktop(a fyne.App) fyne.Window {
 			showErr(fmt.Errorf("find and select your bookmark folder"))
 			return
 		}
+
 		pos, ok := folderPositions[folder.Selected]
 		if !ok {
 			showErr(fmt.Errorf("choose a bookmark folder"))
 			return
 		}
+
 		next.BookmarkPosition = pos
 		next.MaxConcurrent, _ = strconv.Atoi(concurrent.Selected)
 		next.AudioQuality = quality.Selected
@@ -294,7 +364,8 @@ func buildDesktop(a fyne.App) fyne.Window {
 			showErr(err)
 			return
 		}
-		c = next
+
+		config = next
 		list.UnselectAll()
 		tracks = nil
 		rows = nil
@@ -315,8 +386,15 @@ func buildDesktop(a fyne.App) fyne.Window {
 		widget.NewFormItem("Save music to", container.NewBorder(nil, nil, nil, selectDir, music)),
 		widget.NewFormItem("MP3 quality", quality), widget.NewFormItem("Downloads at once", concurrent), widget.NewFormItem("Song details", metadata),
 	))
-	settings := container.NewBorder(pageHeading("Preferences", ""), container.NewHBox(save), nil, nil, container.NewVScroll(container.NewVBox(sourceCard, nameCard, downloadCard)))
+	settings := container.NewBorder(
+		pageHeading("Preferences", ""),
+		container.NewHBox(save),
+		nil,
+		nil,
+		container.NewVScroll(container.NewVBox(sourceCard, nameCard, downloadCard)),
+	)
 
+	// Tool updates and application updates.
 	toolsStatus := widget.NewLabel("")
 	toolsStatus.Wrapping = fyne.TextWrapWord
 	refreshTools := func() {
@@ -325,6 +403,7 @@ func buildDesktop(a fyne.App) fyne.Window {
 			toolsStatus.SetText("Download tools need to be installed.")
 			return
 		}
+
 		toolsStatus.SetText("Ready to download.")
 	}
 	refreshTools()
@@ -336,7 +415,11 @@ func buildDesktop(a fyne.App) fyne.Window {
 		toolsStatus.SetText("Preparing tool update…")
 		go func() {
 			defer cancelUpdate()
-			err := updateTools(ctx, func(s string) { fyne.Do(func() { toolsStatus.SetText(toolUpdateMessage(s)) }) })
+			err := updateTools(ctx, func(s string) {
+				fyne.Do(func() {
+					toolsStatus.SetText(toolUpdateMessage(s))
+				})
+			})
 			fyne.Do(func() {
 				setBusy(false)
 				stop.Disable()
@@ -371,6 +454,7 @@ func buildDesktop(a fyne.App) fyne.Window {
 					appStatus.SetText("App update download failed.")
 					return
 				}
+
 				appStatus.SetText("Update downloaded. Close the app and open the installer to finish.")
 				openPath(filepath.Dir(path))
 			})
@@ -391,6 +475,7 @@ func buildDesktop(a fyne.App) fyne.Window {
 					appStatus.SetText("Could not check for updates.")
 					return
 				}
+
 				if strings.TrimPrefix(r.Tag, "v") == strings.TrimPrefix(version, "v") {
 					appStatus.SetText("You have the latest release: " + r.Tag)
 					downloadUpdate.Hide()
@@ -404,11 +489,19 @@ func buildDesktop(a fyne.App) fyne.Window {
 	})
 	releases := widget.NewButton("Release notes", func() {
 		u, _ := url.Parse("https://github.com/" + releaseRepo + "/releases")
-		if err := a.OpenURL(u); err != nil {
+		if err := application.OpenURL(u); err != nil {
 			showErr(err)
 		}
 	})
-	updatesContent := container.NewVBox(pageHeading("Updates", ""), settingsCard("Application", "Version "+version, container.NewVBox(appStatus, container.NewHBox(check, downloadUpdate, releases))), settingsCard("Download tools", "", container.NewVBox(toolsStatus, updateToolsButton)))
+	updatesContent := container.NewVBox(
+		pageHeading("Updates", ""),
+		settingsCard(
+			"Application",
+			"Version "+version,
+			container.NewVBox(appStatus, container.NewHBox(check, downloadUpdate, releases)),
+		),
+		settingsCard("Download tools", "", container.NewVBox(toolsStatus, updateToolsButton)),
+	)
 	if runtimeInstallAvailable() {
 		install := widget.NewButton("Add to application menu", func() {
 			setBusy(true)
@@ -419,7 +512,11 @@ func buildDesktop(a fyne.App) fyne.Window {
 					if err != nil {
 						showErr(err)
 					} else {
-						dialog.ShowInformation("Installed", "You can now find Music Downloader in your application menu and pin it to your taskbar.", w)
+						dialog.ShowInformation(
+							"Installed",
+							"You can now find Music Downloader in your application menu and pin it to your taskbar.",
+							window,
+						)
 					}
 				})
 			}()
@@ -428,35 +525,51 @@ func buildDesktop(a fyne.App) fyne.Window {
 		updatesContent.Add(widget.NewSeparator())
 		updatesContent.Add(install)
 	}
-	controls = append(controls, load, start, refreshDetails, save, bookmark, music, selectFile, selectDir, folder, scan, pattern, example, metadata, concurrent, quality, updateToolsButton, check, downloadUpdate)
-	tabs := container.NewAppTabs(container.NewTabItemWithIcon("Downloads", theme.DownloadIcon(), downloads), container.NewTabItemWithIcon("Preferences", theme.SettingsIcon(), settings), container.NewTabItemWithIcon("Updates", theme.InfoIcon(), container.NewVScroll(updatesContent)))
+
+	controls = append(controls,
+		load, start, refreshDetails,
+		save, bookmark, music, selectFile, selectDir, folder, scan,
+		pattern, example, metadata, concurrent, quality,
+		updateToolsButton, check, downloadUpdate,
+	)
+
+	// Navigation and shutdown.
+	tabs := container.NewAppTabs(
+		container.NewTabItemWithIcon("Downloads", theme.DownloadIcon(), downloads),
+		container.NewTabItemWithIcon("Preferences", theme.SettingsIcon(), settings),
+		container.NewTabItemWithIcon("Updates", theme.InfoIcon(), container.NewVScroll(updatesContent)),
+	)
 	if dir, err := configDir(); err == nil {
 		if _, err = os.Stat(filepath.Join(dir, "config.json")); os.IsNotExist(err) {
 			tabs.SelectIndex(1)
 		}
 	}
-	w.SetContent(container.NewPadded(container.NewBorder(nil, container.NewBorder(nil, nil, nil, stop, status), nil, nil, tabs)))
-	w.SetCloseIntercept(func() {
+
+	window.SetContent(container.NewPadded(container.NewBorder(nil, container.NewBorder(nil, nil, nil, stop, status), nil, nil, tabs)))
+	window.SetCloseIntercept(func() {
 		if busy {
 			dialog.ShowConfirm("Work is still running", "Cancel the current operation and quit?", func(ok bool) {
 				if ok {
 					if cancel != nil {
 						cancel()
 					}
-					w.SetCloseIntercept(nil)
-					w.Close()
+
+					window.SetCloseIntercept(nil)
+					window.Close()
 				}
-			}, w)
+			}, window)
 		} else {
-			w.SetCloseIntercept(nil)
-			w.Close()
+			window.SetCloseIntercept(nil)
+			window.Close()
 		}
 	})
-	if _, err := os.Stat(c.BookmarkPath); err == nil {
+	if _, err := os.Stat(config.BookmarkPath); err == nil {
 		_ = refreshFolderChoices()
 	}
+
 	if loadErr != nil {
-		dialog.ShowError(loadErr, w)
+		dialog.ShowError(loadErr, window)
 	}
-	return w
+
+	return window
 }

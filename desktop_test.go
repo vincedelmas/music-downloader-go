@@ -19,12 +19,18 @@ func TestDesktopLoadsBookmarks(t *testing.T) {
 	t.Setenv("XDG_DATA_HOME", root)
 	t.Setenv("APPDATA", root)
 	c := testConfig(t)
-	if err := os.WriteFile(c.BookmarkPath, []byte(`{"roots":{"bookmark_bar":{"children":[{"type":"folder","name":"Music","children":[{"type":"url","name":"Artist - Song","url":"https://youtu.be/abc"}]}]}}}`), 0600); err != nil {
+	if err := os.WriteFile(
+		c.BookmarkPath,
+		[]byte(`{"roots":{"bookmark_bar":{"children":[{"type":"folder","name":"Music","children":[{"type":"url","name":"Artist - Song","url":"https://youtu.be/abc"}]}]}}}`),
+		0600,
+	); err != nil {
 		t.Fatal(err)
 	}
+
 	if err := saveConfig(c); err != nil {
 		t.Fatal(err)
 	}
+
 	a := test.NewApp()
 	defer a.Quit()
 	w := buildDesktop(a)
@@ -36,6 +42,7 @@ func TestDesktopLoadsBookmarks(t *testing.T) {
 		if v, ok := o.(*container.AppTabs); ok {
 			tabs = v
 		}
+
 		if v, ok := o.(*fyne.Container); ok {
 			for _, child := range v.Objects {
 				findTabs(child)
@@ -46,9 +53,11 @@ func TestDesktopLoadsBookmarks(t *testing.T) {
 	if tabs == nil {
 		t.Fatal("navigation missing")
 	}
+
 	if len(tabs.Items) != 3 {
 		t.Fatalf("expected 3 tabs, got %d", len(tabs.Items))
 	}
+
 	var load *widget.Button
 	var tracks *widget.List
 	var walk func(fyne.CanvasObject)
@@ -70,6 +79,7 @@ func TestDesktopLoadsBookmarks(t *testing.T) {
 	if load == nil || tracks == nil {
 		t.Fatal("download controls missing")
 	}
+
 	test.Tap(load)
 	if tracks.Length() != 1 {
 		t.Fatalf("expected one loaded track, got %d", tracks.Length())

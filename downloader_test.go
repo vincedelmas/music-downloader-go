@@ -17,6 +17,7 @@ func testConfig(t *testing.T) Config {
 	c.MusicDirectory = t.TempDir()
 	return c
 }
+
 func TestParseBookmarks(t *testing.T) {
 	c := testConfig(t)
 	c.BookmarkPosition = 1
@@ -24,26 +25,32 @@ func TestParseBookmarks(t *testing.T) {
 	if err := os.WriteFile(c.BookmarkPath, []byte(data), 0600); err != nil {
 		t.Fatal(err)
 	}
+
 	tracks, err := parseBookmarks(c)
 	if err != nil {
 		t.Fatal(err)
 	}
+
 	if len(tracks) != 2 || tracks[0].Artist != "Artist" || tracks[0].Title != "Track" || tracks[1].Title != "Song" {
 		t.Fatalf("unexpected tracks: %+v", tracks)
 	}
+
 	folders, err := bookmarkFolders(c.BookmarkPath)
 	if err != nil || len(folders) != 1 || folders[0] != "1: Music" {
 		t.Fatalf("folders=%v, err=%v", folders, err)
 	}
+
 	c.BookmarkPosition = 0
 	if _, err = parseBookmarks(c); err == nil {
 		t.Fatal("a URL is not a bookmark folder")
 	}
+
 	c.BookmarkPosition = -1
 	if _, err = parseBookmarks(c); err == nil {
 		t.Fatal("negative folder must fail")
 	}
 }
+
 func TestSafeName(t *testing.T) {
 	for _, name := range []string{"../../track", `Artist: what?/song*`, "..", "CON", "LPT1.txt", strings.Repeat("🎵", 200)} {
 		safe := safeName(name)
@@ -52,6 +59,7 @@ func TestSafeName(t *testing.T) {
 		}
 	}
 }
+
 func TestConfigRoundTrip(t *testing.T) {
 	root := t.TempDir()
 	t.Setenv("XDG_CONFIG_HOME", root)
@@ -61,36 +69,49 @@ func TestConfigRoundTrip(t *testing.T) {
 	if err := saveConfig(c); err != nil {
 		t.Fatal(err)
 	}
+
 	c.AudioQuality = "320k"
 	if err := saveConfig(c); err != nil {
 		t.Fatal("overwriting saved config:", err)
 	}
+
 	got, err := loadConfig()
 	if err != nil || got != c {
 		t.Fatalf("config=%+v, err=%v", got, err)
 	}
+
 	dir, _ := configDir()
 	b, err := os.ReadFile(filepath.Join(dir, "config.json"))
 	if err != nil {
 		t.Fatal(err)
 	}
+
 	if !json.Valid(b) {
 		t.Fatal("invalid config JSON")
 	}
+
 	c.MaxConcurrent = 0
 	if err = saveConfig(c); err == nil {
 		t.Fatal("zero concurrency should fail")
 	}
 }
+
 func TestCancelledQueue(t *testing.T) {
 	c := testConfig(t)
 	ctx, cancel := context.WithCancel(context.Background())
 	cancel()
 	events := make(chan TrackEvent, 2)
-	err := newDownloader(c, ToolSet{}).process(ctx, []Track{{Name: "One", URL: "https://youtu.be/a"}, {Name: "Two", URL: "https://youtu.be/b"}}, func(e TrackEvent) { events <- e })
+	err := newDownloader(c, ToolSet{}).process(
+		ctx,
+		[]Track{{Name: "One", URL: "https://youtu.be/a"}, {Name: "Two", URL: "https://youtu.be/b"}},
+		func(e TrackEvent) {
+			events <- e
+		},
+	)
 	if err != context.Canceled {
 		t.Fatalf("expected cancellation, got %v", err)
 	}
+
 	for i := 0; i < 2; i++ {
 		select {
 		case e := <-events:
@@ -102,20 +123,33 @@ func TestCancelledQueue(t *testing.T) {
 		}
 	}
 }
+
 func TestExistingFilesAreSkipped(t *testing.T) {
 	c := testConfig(t)
 	if err := os.WriteFile(filepath.Join(c.MusicDirectory, "One.mp3"), []byte("existing"), 0600); err != nil {
 		t.Fatal(err)
 	}
+
 	var event TrackEvent
-	err := newDownloader(c, ToolSet{}).process(context.Background(), []Track{{Name: "One", URL: "https://youtu.be/a"}}, func(e TrackEvent) { event = e })
+	err := newDownloader(c, ToolSet{}).process(
+		context.Background(),
+		[]Track{{Name: "One", URL: "https://youtu.be/a"}},
+		func(e TrackEvent) {
+			event = e
+		},
+	)
 	if err != nil || event.State != "Skipped" {
 		t.Fatalf("%+v, %v", event, err)
 	}
 }
 
 func TestFilenameCollisions(t *testing.T) {
-	tracks := []Track{{Name: "Song", URL: "1"}, {Name: "song", URL: "2"}, {Name: "Song (2)", URL: "3"}, {Name: "Other", URL: "1"}}
+	tracks := []Track{
+		{Name: "Song", URL: "1"},
+		{Name: "song", URL: "2"},
+		{Name: "Song (2)", URL: "3"},
+		{Name: "Other", URL: "1"},
+	}
 	files, skip := trackPaths(t.TempDir(), tracks)
 	seen := make(map[string]bool)
 	for _, p := range files {
@@ -123,8 +157,10 @@ func TestFilenameCollisions(t *testing.T) {
 		if seen[key] {
 			t.Fatalf("colliding filename: %s", p)
 		}
+
 		seen[key] = true
 	}
+
 	if !skip[3] || skip[0] || skip[1] {
 		t.Fatalf("incorrect duplicate detection: %v", skip)
 	}

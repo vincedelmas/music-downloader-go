@@ -1,18 +1,22 @@
 package main
 
 import (
+	"image/color"
+	"strings"
+
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
-	"image/color"
-	"strings"
 )
 
 type desktopTheme struct{ fyne.Theme }
 
-func newDesktopTheme() fyne.Theme { return desktopTheme{theme.DefaultTheme()} }
+func newDesktopTheme() fyne.Theme {
+	return desktopTheme{theme.DefaultTheme()}
+}
+
 func (t desktopTheme) Color(n fyne.ThemeColorName, _ fyne.ThemeVariant) color.Color {
 	switch n {
 	case theme.ColorNamePrimary:
@@ -38,8 +42,10 @@ func (t desktopTheme) Color(n fyne.ThemeColorName, _ fyne.ThemeVariant) color.Co
 	case theme.ColorNameSelection, theme.ColorNameFocus:
 		return color.NRGBA{R: 42, G: 106, B: 93, A: 180}
 	}
+
 	return t.Theme.Color(n, theme.VariantDark)
 }
+
 func (t desktopTheme) Size(n fyne.ThemeSizeName) float32 {
 	switch n {
 	case theme.SizeNameText:
@@ -57,8 +63,10 @@ func (t desktopTheme) Size(n fyne.ThemeSizeName) float32 {
 	case theme.SizeNameHeadingText:
 		return 21
 	}
+
 	return t.Theme.Size(n)
 }
+
 func pageHeading(title, subtitle string) fyne.CanvasObject {
 	heading := canvas.NewText(title, color.NRGBA{R: 232, G: 241, B: 238, A: 255})
 	heading.TextSize = 25
@@ -69,8 +77,10 @@ func pageHeading(title, subtitle string) fyne.CanvasObject {
 	if subtitle == "" {
 		return container.NewVBox(heading)
 	}
+
 	return container.NewVBox(heading, sub)
 }
+
 func settingsCard(title, subtitle string, content fyne.CanvasObject) fyne.CanvasObject {
 	return widget.NewCard(title, subtitle, container.NewPadded(content))
 }
