@@ -50,9 +50,6 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
       - name: Linux build dependencies
         if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y libgl1-mesa-dev xorg-dev libwayland-dev libxkbcommon-dev xvfb
@@ -75,7 +72,7 @@ jobs:
           go-licenses save . --save_path build/go-licenses --ignore music-downloader-go
       - name: Build bundled package
         shell: bash
-        run: python scripts/bundle.py --version "$RELEASE_TAG"
+        run: go run ./cmd/bundle --version "$RELEASE_TAG"
       - uses: actions/upload-artifact@v4
         with:
           name: package-${{ matrix.os }}-${{ matrix.arch }}

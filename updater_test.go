@@ -140,4 +140,30 @@ func TestToolUpdateIsTransactional(t *testing.T) {
 	if _, err = os.Stat(filepath.Join(filepath.Dir(tools.YtDlp), "versions.json")); err != nil {
 		t.Fatal("missing version manifest:", err)
 	}
+
+	for i := 0; i < 3; i++ {
+		if err = updateTools(context.Background(), func(string) {}); err != nil {
+			t.Fatal(err)
+		}
+	}
+	entries, err = os.ReadDir(filepath.Join(data, "tools"))
+	if err != nil || len(entries) != 3 {
+		t.Fatalf("expected three completed tool sets after four updates: %v, %v", entries, err)
+	}
+	previous, err = os.ReadFile(pointer)
+	if err != nil {
+		t.Fatal(err)
+	}
+	fail = true
+	if err = updateTools(context.Background(), func(string) {}); err == nil {
+		t.Fatal("broken update should fail without pruning tool history")
+	}
+	after, err = os.ReadFile(pointer)
+	if err != nil || string(after) != string(previous) {
+		t.Fatal("failed update changed the active tool set")
+	}
+	entries, err = os.ReadDir(filepath.Join(data, "tools"))
+	if err != nil || len(entries) != 3 {
+		t.Fatalf("failed update changed tool history: %v, %v", entries, err)
+	}
 }

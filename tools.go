@@ -12,6 +12,7 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
+	"sort"
 	"strings"
 	"time"
 )
@@ -318,8 +319,52 @@ func updateTools(ctx context.Context, log func(string)) error {
 	}
 
 	keep = true
+	if err := pruneToolSets(root, filepath.Base(stage)); err != nil {
+		log("Tools updated; some older files could not be removed: " + err.Error())
+	}
 	log("All tools updated. Ready to download.")
 	return nil
+}
+
+// Keep the active set and the two newest previous sets. Incomplete downloads
+// and unrelated directories are left alone; bundled tools are outside this root.
+func pruneToolSets(root, active string) error {
+	entries, err := os.ReadDir(root)
+	if err != nil {
+		return err
+	}
+
+	type previousSet struct {
+		name      string
+		completed time.Time
+	}
+	var previous []previousSet
+	for _, entry := range entries {
+		if !entry.IsDir() || !strings.HasPrefix(entry.Name(), "set-") || entry.Name() == active {
+			continue
+		}
+
+		directory := filepath.Join(root, entry.Name())
+		manifest, err := os.Stat(filepath.Join(directory, "versions.json"))
+		if err != nil || !manifest.Mode().IsRegular() || toolSet(directory).validate() != nil {
+			continue
+		}
+		previous = append(previous, previousSet{entry.Name(), manifest.ModTime()})
+	}
+
+	sort.Slice(previous, func(i, j int) bool {
+		if previous[i].completed.Equal(previous[j].completed) {
+			return previous[i].name < previous[j].name
+		}
+		return previous[i].completed.After(previous[j].completed)
+	})
+	var cleanupErr error
+	for i := 2; i < len(previous); i++ {
+		if err := os.RemoveAll(filepath.Join(root, previous[i].name)); err != nil {
+			cleanupErr = err
+		}
+	}
+	return cleanupErr
 }
 
 func appAssetName(tag, goos, arch string) string {

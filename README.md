@@ -51,36 +51,38 @@ Open the **Updates** tab to:
 
 Updating or reinstalling keeps your settings and music.
 
+After a successful tool update, the app keeps the active tool set and the two newest previous sets. Older downloaded sets are removed automatically. If files are in use, cleanup is retried after the next successful update.
+
 ## Building from source
 
-You need Go 1.24+, Python 3.11+, a C compiler, and the [Fyne build dependencies](https://docs.fyne.io/started/).
+You need Go 1.24+, a C compiler, and the [Fyne build dependencies](https://docs.fyne.io/started/). Python is not required.
 
 On CachyOS or Arch:
 
 ```sh
-sudo pacman -S --needed go python base-devel libglvnd libxcursor libxrandr libxinerama libxi libxxf86vm wayland libxkbcommon
+sudo pacman -S --needed go base-devel libglvnd libxcursor libxrandr libxinerama libxi libxxf86vm wayland libxkbcommon
 ```
 
-On Ubuntu or Debian, install Go 1.24+ and Python 3.11+, then the native build dependencies:
+On Ubuntu or Debian, install Go 1.24+, then the native build dependencies:
 
 ```sh
 sudo apt install build-essential libgl1-mesa-dev xorg-dev libwayland-dev libxkbcommon-dev
 ```
 
-On Windows, install MinGW-w64 and Inno Setup 6 alongside Go and Python. On macOS, install Xcode Command Line Tools alongside Go and Python.
+On Windows, install MinGW-w64 and Inno Setup 6 alongside Go. On macOS, install Xcode Command Line Tools alongside Go.
 
 Build a package for your current system:
 
 ```sh
-python3 scripts/bundle.py --version dev
+go run ./cmd/bundle --version dev
 ```
 
-The package is written to `dist/`. On Windows, use `python` if `python3` is unavailable. Install the package before deleting the clone.
+The package is written to `dist/`. Install the package before deleting the clone.
 
 To build and run during development:
 
 ```sh
-python3 scripts/bundle.py --tools-only
+go run ./cmd/bundle --tools-only
 go build -o music-downloader .
 ./music-downloader
 ```
@@ -92,7 +94,6 @@ Run the checks with:
 ```sh
 go vet ./...
 go test -race -tags ci ./...
-python3 -m unittest discover -s scripts -p 'test_*.py'
 ```
 
 ## Releases
