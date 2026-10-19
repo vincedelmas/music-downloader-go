@@ -38,6 +38,8 @@ Nested bookmark folders are supported. Loading bookmarks checks the selected mus
 
 Use **Show** to filter queued, active, completed, warning, failed, skipped, or cancelled tracks. Status counts stay visible for the whole collection. Select a track to see its details or any errors, and use **Cancel** to stop a batch.
 
+Right-click a song to **Check downloaded file**, **Download song**, or **Refresh song details and cover** for that song alone. Checking updates its status from the file's presence in your music folder. The toolbar buttons still process the whole bookmark collection; song actions are disabled while work is running.
+
 ## Song details and covers
 
 Enable **Add song details and album artwork** in Preferences to add the artist, title, album, year, and cover automatically. Matching prefers studio albums over live recordings and video releases. Some songs or covers may be missing from the database.

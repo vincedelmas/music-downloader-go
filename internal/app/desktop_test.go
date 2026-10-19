@@ -127,6 +127,28 @@ func TestDesktopLoadsBookmarks(t *testing.T) {
 	if tracks.Length() != 2 {
 		t.Fatal("reloading bookmarks lost tracks")
 	}
+	// Right-clicking a filtered row must select and check that exact song.
+	filter.SetSelected("Completed")
+	row := tracks.CreateItem().(*trackRow)
+	tracks.UpdateItem(0, row)
+	row.TappedSecondary(&fyne.PointEvent{AbsolutePosition: fyne.NewPos(20, 20)})
+	overlay := w.Canvas().Overlays().Top().(fyne.Widget)
+	menu := test.WidgetRenderer(overlay).Objects()[0].(*widget.PopUpMenu)
+	if len(menu.Items) != 3 {
+		t.Fatal("song actions missing")
+	}
+	if err := os.Remove(filepath.Join(c.MusicDirectory, "Artist - Song.mp3")); err != nil {
+		t.Fatal(err)
+	}
+	test.Tap(menu.Items[0].(fyne.Tappable))
+	if tracks.Length() != 0 {
+		t.Fatal("file check did not remove the missing song from Completed")
+	}
+	filter.SetSelected("Queued")
+	if tracks.Length() != 2 {
+		t.Fatal("file check did not queue the missing song")
+	}
+	filter.SetSelected("All")
 	// Confirm a build without a bundled tools folder still opens settings instead of exiting.
 	tabs.SelectIndex(1)
 	if os.Getenv("MUSIC_DOWNLOADER_SCREENSHOT") != "" {

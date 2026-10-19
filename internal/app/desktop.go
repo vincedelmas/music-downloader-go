@@ -41,6 +41,7 @@ func buildDesktop(application fyne.App) fyne.Window {
 	var states []string
 	var visible []int
 	var details []string
+	var showTrackMenu func(widget.ListItemID, *fyne.PointEvent)
 	list := widget.NewList(func() int {
 		return len(visible)
 	}, func() fyne.CanvasObject {
@@ -49,9 +50,13 @@ func buildDesktop(application fyne.App) fyne.Window {
 		name.Truncation = fyne.TextTruncateEllipsis
 		state := widget.NewLabel("")
 		state.Importance = widget.LowImportance
-		return container.NewBorder(nil, nil, widget.NewIcon(theme.MediaMusicIcon()), state, name)
+		row := &trackRow{content: container.NewBorder(nil, nil, widget.NewIcon(theme.MediaMusicIcon()), state, name)}
+		row.ExtendBaseWidget(row)
+		return row
 	}, func(i widget.ListItemID, o fyne.CanvasObject) {
-		row := o.(*fyne.Container)
+		item := o.(*trackRow)
+		item.onSecondary = func(event *fyne.PointEvent) { showTrackMenu(i, event) }
+		row := item.content
 		index := visible[i]
 		row.Objects[0].(*widget.Label).SetText(tracks[index].Name)
 		label := row.Objects[2].(*widget.Label)
@@ -159,21 +164,16 @@ func buildDesktop(application fyne.App) fyne.Window {
 		details = make([]string, len(tracks))
 		files, duplicate := trackPaths(config.MusicDirectory, tracks)
 		for i, t := range tracks {
-			states[i] = "Queued"
-			details[i] = t.URL
-			if duplicate[i] {
-				states[i], details[i] = "Skipped", "Duplicate link"
-			} else if _, err := os.Stat(files[i]); err == nil {
-				states[i], details[i] = "Already downloaded", files[i]
-			} else if !os.IsNotExist(err) {
-				states[i], details[i] = "Failed", err.Error()
-			}
+			states[i], details[i] = trackFileStatus(t, files[i], duplicate[i])
 		}
 		refreshList()
 		progress.SetValue(0)
 		status.SetText(fmt.Sprintf("%d YouTube tracks found. Existing files will be skipped.", len(tracks)))
 	})
-	runBatch := func(refreshOnly bool) {
+	runBatch := func(refreshOnly bool, indices ...int) {
+		if busy {
+			return
+		}
 		if len(tracks) == 0 {
 			showErr(fmt.Errorf("load your bookmarks first"))
 			return
@@ -203,6 +203,10 @@ func buildDesktop(application fyne.App) fyne.Window {
 
 		cfg := config
 		batch := append([]Track(nil), tracks...)
+		total := len(indices)
+		if total == 0 {
+			total = len(batch)
+		}
 		go func() {
 			defer cancelDownload()
 			done := 0
@@ -217,18 +221,18 @@ func buildDesktop(application fyne.App) fyne.Window {
 					switch e.State {
 					case "Completed", "Updated", "Saved with warning", "Already downloaded", "Skipped", "Failed", "Cancelled":
 						done++
-						progress.SetValue(float64(done) / float64(len(batch)))
+						progress.SetValue(float64(done) / float64(total))
 					}
 
-					status.SetText(fmt.Sprintf("%d / %d finished", done, len(batch)))
+					status.SetText(fmt.Sprintf("%d / %d finished", done, total))
 				})
 			}
 			d := newDownloader(cfg, tools)
 			var err error
 			if refreshOnly {
-				err = d.refreshDetails(ctx, batch, emit)
+				err = d.refreshDetails(ctx, batch, emit, indices...)
 			} else {
-				err = d.process(ctx, batch, emit)
+				err = d.process(ctx, batch, emit, indices...)
 			}
 
 			fyne.Do(func() {
@@ -246,6 +250,22 @@ func buildDesktop(application fyne.App) fyne.Window {
 				}
 			})
 		}()
+	}
+	showTrackMenu = func(id widget.ListItemID, event *fyne.PointEvent) {
+		list.Select(id)
+		index := visible[id]
+		check := fyne.NewMenuItem("Check downloaded file", func() {
+			if busy {
+				return
+			}
+			files, duplicate := trackPaths(config.MusicDirectory, tracks)
+			states[index], details[index] = trackFileStatus(tracks[index], files[index], duplicate[index])
+			refreshList()
+		})
+		download := fyne.NewMenuItem("Download song", func() { runBatch(false, index) })
+		refresh := fyne.NewMenuItem("Refresh song details and cover", func() { runBatch(true, index) })
+		check.Disabled, download.Disabled, refresh.Disabled = busy, busy, busy
+		widget.NewPopUpMenu(fyne.NewMenu("", check, download, refresh), window.Canvas()).ShowAtPosition(event.AbsolutePosition)
 	}
 	start := widget.NewButtonWithIcon("Download", theme.DownloadIcon(), func() {
 		runBatch(false)
@@ -633,4 +653,19 @@ func trackStateGroup(state string) string {
 	default:
 		return state
 	}
+}
+
+// trackRow adds a context menu while the list handles normal selection.
+type trackRow struct {
+	widget.BaseWidget
+	content     *fyne.Container
+	onSecondary func(*fyne.PointEvent)
+}
+
+func (r *trackRow) CreateRenderer() fyne.WidgetRenderer {
+	return widget.NewSimpleRenderer(r.content)
+}
+
+func (r *trackRow) TappedSecondary(event *fyne.PointEvent) {
+	r.onSecondary(event)
 }

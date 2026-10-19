@@ -3,6 +3,8 @@ package app
 import (
 	"context"
 	"encoding/json"
+	"io"
+	"net/http"
 	"os"
 	"path/filepath"
 	"strings"
@@ -163,5 +165,40 @@ func TestFilenameCollisions(t *testing.T) {
 
 	if !skip[3] || skip[0] || skip[1] {
 		t.Fatalf("incorrect duplicate detection: %v", skip)
+	}
+}
+
+func TestSingleTrackActionsKeepFilename(t *testing.T) {
+	resetMetadata(t)
+	c := testConfig(t)
+	tracks := []Track{{Name: "Song", URL: "first"}, {Name: "Song", URL: "second", Artist: "Artist", Title: "Song"}}
+	files, _ := trackPaths(c.MusicDirectory, tracks)
+	if err := os.WriteFile(files[1], []byte("existing"), 0600); err != nil {
+		t.Fatal(err)
+	}
+	d := newDownloader(c, ToolSet{})
+	d.client.Transport = metadataTransport(func(*http.Request) (*http.Response, error) {
+		return &http.Response{StatusCode: 200, Body: io.NopCloser(strings.NewReader(`{"recordings":[]}`))}, nil
+	})
+	var events []TrackEvent
+	emit := func(e TrackEvent) { events = append(events, e) }
+	if err := d.process(context.Background(), tracks, emit, 1); err != nil {
+		t.Fatal(err)
+	}
+	if len(events) != 1 || events[0].Index != 1 || events[0].State != "Already downloaded" || events[0].Detail != files[1] {
+		t.Fatalf("single download targeted the wrong file: %+v", events)
+	}
+	events = nil
+	if err := d.refreshDetails(context.Background(), tracks, emit, 1); err == nil {
+		t.Fatal("expected missing metadata warning")
+	}
+	if len(events) != 2 || events[0].State != "Tagging" || events[0].Index != 1 || events[1].State != "Failed" || events[1].Index != 1 {
+		t.Fatalf("single refresh targeted the wrong file: %+v", events)
+	}
+	if data, err := os.ReadFile(files[1]); err != nil || string(data) != "existing" {
+		t.Fatal("existing audio changed")
+	}
+	if _, err := os.Stat(files[0]); !os.IsNotExist(err) {
+		t.Fatal("unselected song was downloaded")
 	}
 }

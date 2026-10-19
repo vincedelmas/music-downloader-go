@@ -249,21 +249,27 @@ func (d *MusicDownloader) tag(ctx context.Context, path string, m TrackMetadata)
 	return coverErr
 }
 
-func (d *MusicDownloader) process(ctx context.Context, tracks []Track, emit func(TrackEvent)) error {
-	return d.processBatch(ctx, tracks, emit, false)
+func (d *MusicDownloader) process(ctx context.Context, tracks []Track, emit func(TrackEvent), indices ...int) error {
+	return d.processBatch(ctx, tracks, emit, false, indices...)
 }
 
-func (d *MusicDownloader) refreshDetails(ctx context.Context, tracks []Track, emit func(TrackEvent)) error {
+func (d *MusicDownloader) refreshDetails(ctx context.Context, tracks []Track, emit func(TrackEvent), indices ...int) error {
+	if len(indices) == 0 {
+		for i := range tracks {
+			indices = append(indices, i)
+		}
+	}
 	metadataCache.Lock()
-	for _, t := range tracks {
+	for _, i := range indices {
+		t := tracks[i]
 		delete(metadataCache.items, normalizedName(t.Artist)+"/"+normalizedName(t.Title))
 	}
 
 	metadataCache.Unlock()
-	return d.processBatch(ctx, tracks, emit, true)
+	return d.processBatch(ctx, tracks, emit, true, indices...)
 }
 
-func (d *MusicDownloader) processBatch(ctx context.Context, tracks []Track, emit func(TrackEvent), refreshOnly bool) error {
+func (d *MusicDownloader) processBatch(ctx context.Context, tracks []Track, emit func(TrackEvent), refreshOnly bool, indices ...int) error {
 	if err := os.MkdirAll(d.config.MusicDirectory, 0755); err != nil {
 		return err
 	}
@@ -359,7 +365,12 @@ func (d *MusicDownloader) processBatch(ctx context.Context, tracks []Track, emit
 		}()
 	}
 
-	for i := range tracks {
+	if len(indices) == 0 {
+		for i := range tracks {
+			indices = append(indices, i)
+		}
+	}
+	for _, i := range indices {
 		jobs <- i
 	}
 
@@ -519,4 +530,16 @@ func (d *MusicDownloader) metadataCover(ctx context.Context, m TrackMetadata, di
 	}
 
 	return "", lastErr
+}
+
+func trackFileStatus(track Track, path string, duplicate bool) (string, string) {
+	if duplicate {
+		return "Skipped", "Duplicate link"
+	}
+	if _, err := os.Stat(path); err == nil {
+		return "Already downloaded", path
+	} else if !os.IsNotExist(err) {
+		return "Failed", err.Error()
+	}
+	return "Queued", track.URL
 }
