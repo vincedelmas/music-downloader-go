@@ -1,0 +1,4576 @@
+{
+  "recordings": [
+    {
+      "title": "Human Nature",
+      "score": 100,
+      "video": null,
+      "first-release-date": "2017-01-06",
+      "artist-credit": [
+        {
+          "name": "Michael Jackson",
+          "joinphrase": "",
+          "artist": {
+            "name": "Michael Jackson"
+          }
+        }
+      ],
+      "releases": [
+        {
+          "id": "3e769ea2-bd73-423e-a51f-ce5ae6b5491f",
+          "title": "The Essential Michael Jackson",
+          "date": "2017-01-06",
+          "status": "Official",
+          "release-group": {
+            "id": "ee7f4e87-de9d-357a-ae1f-f3ba11e5d390",
+            "title": "The Essential Michael Jackson",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Human Nature",
+      "score": 100,
+      "video": null,
+      "disambiguation": "360 Reality Audio mix",
+      "first-release-date": "2022-11-17",
+      "artist-credit": [
+        {
+          "name": "Michael Jackson",
+          "joinphrase": "",
+          "artist": {
+            "name": "Michael Jackson"
+          }
+        }
+      ],
+      "releases": [
+        {
+          "id": "e02da1f6-acbe-4f92-94ee-7ae50ca1f1da",
+          "title": "Thriller",
+          "date": "2022-11-17",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Human Nature",
+      "score": 100,
+      "video": null,
+      "first-release-date": "2016",
+      "artist-credit": [
+        {
+          "name": "Michael Jackson",
+          "joinphrase": "",
+          "artist": {
+            "name": "Michael Jackson"
+          }
+        }
+      ],
+      "releases": [
+        {
+          "id": "01cfcc0c-987d-4784-a81d-bd7dbe8dd281",
+          "title": "The Best of Michael Jackson",
+          "date": "2016",
+          "release-group": {
+            "id": "5dbf73fc-bc5c-4fba-92ab-f69dc622d003",
+            "title": "The Best of Michael Jackson",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Human Nature",
+      "score": 100,
+      "video": null,
+      "first-release-date": "1994",
+      "artist-credit": [
+        {
+          "name": "Michael Jackson",
+          "joinphrase": "",
+          "artist": {
+            "name": "Michael Jackson"
+          }
+        }
+      ],
+      "releases": [
+        {
+          "id": "5c01465f-16cb-4e8d-8518-bb1e4db91360",
+          "title": "Michael Jackson Vol.1",
+          "date": "1994",
+          "status": "Bootleg",
+          "release-group": {
+            "id": "b0b7bd48-506c-45bc-b9d6-51d2a930e970",
+            "title": "Michael Jackson Vol.1",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Live"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Human Nature",
+      "score": 100,
+      "video": null,
+      "first-release-date": "2017",
+      "artist-credit": [
+        {
+          "name": "Michael Jackson",
+          "joinphrase": "",
+          "artist": {
+            "name": "Michael Jackson"
+          }
+        }
+      ],
+      "releases": [
+        {
+          "id": "91e6e7c2-d7bf-4983-a473-75d0017f06f6",
+          "title": "Transmission Impossible",
+          "status": "Official",
+          "release-group": {
+            "id": "34b1bf1d-11c9-457f-9c13-1aedc7643cd8",
+            "title": "Transmission Impossible",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation",
+              "Live"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Human Nature",
+      "score": 100,
+      "video": null,
+      "first-release-date": "1994",
+      "artist-credit": [
+        {
+          "name": "Michael Jackson",
+          "joinphrase": "",
+          "artist": {
+            "name": "Michael Jackson"
+          }
+        }
+      ],
+      "releases": [
+        {
+          "id": "a2d50015-b0ff-42a1-ad94-f2523fd43738",
+          "title": "The King of Pop World Tour 1987",
+          "date": "1994",
+          "status": "Bootleg",
+          "release-group": {
+            "id": "0a13b23f-ca61-42d6-9e30-3851cd68480a",
+            "title": "The King of Pop World Tour 1987",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Live"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Human Nature",
+      "score": 100,
+      "video": null,
+      "first-release-date": "1988",
+      "artist-credit": [
+        {
+          "name": "Michael Jackson",
+          "joinphrase": "",
+          "artist": {
+            "name": "Michael Jackson"
+          }
+        }
+      ],
+      "releases": [
+        {
+          "id": "e5c78c9b-0189-49e3-8387-4e07d278ac2f",
+          "title": "Live At Wembley 1988",
+          "release-group": {
+            "id": "506e88fe-3749-4e08-a3ea-3348202397bf",
+            "title": "Live At Wembley 1988"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Human Nature",
+      "score": 100,
+      "video": null,
+      "first-release-date": "2023-01-27",
+      "artist-credit": [
+        {
+          "name": "Michael Jackson",
+          "joinphrase": "",
+          "artist": {
+            "name": "Michael Jackson"
+          }
+        }
+      ],
+      "releases": [
+        {
+          "id": "31168a0e-074c-462c-8c9a-1ff424e07dce",
+          "title": "Los Angeles 1989",
+          "date": "2023-01-27",
+          "status": "Bootleg",
+          "release-group": {
+            "id": "a610168b-57ef-4ad4-998b-1f7b8f940e68",
+            "title": "Los Angeles 1989",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Live"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Human Nature",
+      "score": 100,
+      "video": null,
+      "first-release-date": "1982-11-30",
+      "artist-credit": [
+        {
+          "name": "Michael Jackson",
+          "joinphrase": "",
+          "artist": {
+            "name": "Michael Jackson"
+          }
+        }
+      ],
+      "releases": [
+        {
+          "id": "8e056ddb-b62b-46b5-a7c7-a3a590fb4fc2",
+          "title": "Thriller",
+          "date": "1982-11-30",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Human Nature",
+      "score": 100,
+      "video": null,
+      "disambiguation": "album version",
+      "first-release-date": "1982-11-30",
+      "artist-credit": [
+        {
+          "name": "Michael Jackson",
+          "joinphrase": "",
+          "artist": {
+            "name": "Michael Jackson"
+          }
+        }
+      ],
+      "releases": [
+        {
+          "id": "c3c728c6-6861-4d9f-a0f3-dbf4229e76de",
+          "title": "『Michael/マイケル』オリジナル・サウンドトラック",
+          "date": "2026-05-06",
+          "status": "Official",
+          "release-group": {
+            "id": "f551b61a-31db-4fb1-8a29-751bc685d836",
+            "title": "Michael: Songs From the Motion Picture",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Soundtrack"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "マイケル・ジャクソン",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Blu-spec CD"
+            }
+          ]
+        },
+        {
+          "id": "db1f2f0f-dd04-4689-83e1-b31b8d91b299",
+          "title": "Michael Jackson's This Is It (The Music That Inspired The Movie)",
+          "date": "2009",
+          "status": "Official",
+          "release-group": {
+            "id": "97b169da-67f4-4704-a7bf-5584df98ef3b",
+            "title": "This Is It",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "0ee01baf-b83c-4716-b91b-07b01a8d39d4",
+          "title": "Thriller 25",
+          "date": "2008-02-08",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "bc689b95-ef23-4742-b9d7-cf3b14d6ad8a",
+          "title": "Thriller",
+          "date": "2001-10-16",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "ae07c8b0-ca0b-44bf-9253-383814b4ab43",
+          "title": "Michael: Songs From the Motion Picture",
+          "date": "2026-04-24",
+          "status": "Official",
+          "release-group": {
+            "id": "f551b61a-31db-4fb1-8a29-751bc685d836",
+            "title": "Michael: Songs From the Motion Picture",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Soundtrack"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "b69f7312-faec-4f86-b7a1-7b64a9ef6cd2",
+          "title": "Michael: Songs From the Motion Picture",
+          "date": "2026-04-24",
+          "status": "Official",
+          "release-group": {
+            "id": "f551b61a-31db-4fb1-8a29-751bc685d836",
+            "title": "Michael: Songs From the Motion Picture",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Soundtrack"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "ab3bd96f-0b19-4f65-bf55-e2ec71078527",
+          "title": "Michael: Songs From the Motion Picture",
+          "date": "2026-04-24",
+          "status": "Official",
+          "release-group": {
+            "id": "f551b61a-31db-4fb1-8a29-751bc685d836",
+            "title": "Michael: Songs From the Motion Picture",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Soundtrack"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "b5e47f5e-08ef-4f51-9c81-6b931990c236",
+          "title": "Michael: Songs From the Motion Picture",
+          "date": "2026-04-24",
+          "status": "Official",
+          "release-group": {
+            "id": "f551b61a-31db-4fb1-8a29-751bc685d836",
+            "title": "Michael: Songs From the Motion Picture",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Soundtrack"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "8d0d5012-80fb-4ba8-9714-a01e0526f15b",
+          "title": "Thriller",
+          "date": "2022-11-18",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Blu-spec CD"
+            }
+          ]
+        },
+        {
+          "id": "d57c1641-f9e7-4a40-b6d9-e156e3230137",
+          "title": "Thriller",
+          "date": "1982-11-30",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "efe98ab4-eb98-46e6-88ea-1280ca7765a9",
+          "title": "Michael: Songs From The Motion Picture",
+          "status": "Official",
+          "release-group": {
+            "id": "f551b61a-31db-4fb1-8a29-751bc685d836",
+            "title": "Michael: Songs From the Motion Picture",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Soundtrack"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "f4e5ae74-417f-4631-8307-7ba3589ebd30",
+          "title": "Music Gala, Volume 2",
+          "date": "1986",
+          "status": "Official",
+          "release-group": {
+            "id": "d88f6813-ff96-4d60-9d34-390c196d9d8d",
+            "title": "Music Gala, Volume 2",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Various Artists",
+              "joinphrase": "",
+              "artist": {
+                "name": "Various Artists"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "700aa4bc-aa38-4d71-84d3-0063dc428de0",
+          "title": "Thriller",
+          "date": "",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Blu-spec CD"
+            }
+          ]
+        },
+        {
+          "id": "e5016d8a-f294-48fd-811a-7f4840343775",
+          "title": "Thriller 25",
+          "date": "2008",
+          "status": "Official",
+          "release-group": {
+            "id": "3a7817b5-22cb-32c3-a31b-2c8309fbf92e",
+            "title": "Thriller",
+            "primary-type": "Single"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "693f1940-7107-46a4-acf2-1d487cf46e51",
+          "title": "Number Ones",
+          "date": "2003",
+          "status": "Official",
+          "release-group": {
+            "id": "8a0b8a6c-d6ff-33d3-83ad-106e39901282",
+            "title": "Number Ones",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "8f1870b6-e3b8-4d5b-82bb-fa123b51d454",
+          "title": "Number Ones",
+          "date": "2026-01-30",
+          "status": "Official",
+          "release-group": {
+            "id": "8a0b8a6c-d6ff-33d3-83ad-106e39901282",
+            "title": "Number Ones",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "de6e1acd-40f9-49d0-b434-45c41626ed94",
+          "title": "Michael: Songs From the Motion Picture",
+          "date": "2026",
+          "status": "Official",
+          "release-group": {
+            "id": "f551b61a-31db-4fb1-8a29-751bc685d836",
+            "title": "Michael: Songs From the Motion Picture",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Soundtrack"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "3923592d-4d43-4484-afea-dd1041d5f74c",
+          "title": "Number Ones",
+          "date": "2003-11-19",
+          "status": "Official",
+          "release-group": {
+            "id": "8a0b8a6c-d6ff-33d3-83ad-106e39901282",
+            "title": "Number Ones",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "5ca38af2-d7b9-4dc7-8236-b98c0342a205",
+          "title": "Thriller",
+          "date": "",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "78d8e119-9967-4040-9756-5e27363d4279",
+          "title": "Thriller",
+          "date": "1983",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "cf17705d-1570-49d8-af34-f36f98c4dc9b",
+          "title": "Michael: Songs From the Motion Picture",
+          "status": "Official",
+          "release-group": {
+            "id": "f551b61a-31db-4fb1-8a29-751bc685d836",
+            "title": "Michael: Songs From the Motion Picture",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Soundtrack"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "01a319ad-7aea-4449-a8d2-023580eefc81",
+          "title": "Leave Me Alone",
+          "date": "1989",
+          "status": "Official",
+          "release-group": {
+            "id": "1788a097-19dd-4c27-b573-743d80928e6d",
+            "title": "Leave Me Alone",
+            "primary-type": "Single"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "8cm CD"
+            }
+          ]
+        },
+        {
+          "id": "56750bea-1f29-45a2-808e-25949f574263",
+          "title": "King of Pop: Unikatowa Kolekcja, Przeboje Wybrane Przez Polskich Fanów",
+          "date": "2008-10-20",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "3eb2ed58-5a39-411a-9c69-2f18b1531ae5",
+          "title": "Thriller 25 Super Deluxe Edition",
+          "date": "2008-02-08",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "4c63355b-91ff-4ee3-b081-cfd7d79e1621",
+          "title": "Thriller 25",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "bcfb182b-1c9d-4773-b75c-9111aed7d2df",
+          "title": "Number Ones",
+          "status": "Official",
+          "release-group": {
+            "id": "8a0b8a6c-d6ff-33d3-83ad-106e39901282",
+            "title": "Number Ones",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "55b4c905-d309-4ee5-8ce5-86df7a73a70c",
+          "title": "King of Pop: Greatest Hits: Mexican Collection",
+          "date": "2008",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "0647ece6-a67b-48f4-95f0-d955ad1963cf",
+          "title": "King of Pop: Japan Edition",
+          "date": "2008-09-24",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "a6731271-d0f9-4de8-907c-6f372c3c394b",
+          "title": "Thriller",
+          "date": "2011-11-14",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "e7e9de83-14a6-4f00-a013-33e48402e3a3",
+          "title": "Thriller 40",
+          "date": "2022-11-18",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "6ed1fda9-aeb7-4eb7-9019-8c17e7a978d3",
+          "title": "Thriller 40",
+          "date": "2022-11-18",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "56e11eb9-a1a2-46e1-8919-dea0dadd21f9",
+          "title": "Thriller",
+          "date": "1982-11",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Cassette"
+            }
+          ]
+        },
+        {
+          "id": "877ff2e7-e270-4267-a1fe-956c217f0061",
+          "title": "Thriller 25",
+          "date": "2008-02-08",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "de9eb6be-f876-4acb-a3c2-d7042397c449",
+          "title": "Thriller",
+          "date": "2001",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "009a9e97-0097-3fa8-ac85-3d67d6d5e06e",
+          "title": "Thriller",
+          "date": "2001-10-15",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "81280ab0-7221-4f7a-b98b-43fc2238ed9f",
+          "title": "Number Ones",
+          "date": "2003-11-17",
+          "status": "Official",
+          "release-group": {
+            "id": "8a0b8a6c-d6ff-33d3-83ad-106e39901282",
+            "title": "Number Ones",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "60c63cfe-082e-488a-b6ba-6f29003bb64c",
+          "title": "Thriller 25",
+          "date": "2018",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "f716ef2d-3ef9-4c85-9fcc-cbbc9f61f947",
+          "title": "Thriller",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "21108dfd-2826-4846-8cca-4d073827a31b",
+          "title": "Thriller",
+          "date": "",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "cd552126-a4b2-4bde-8208-0fef6acef72f",
+          "title": "Thriller / Off the Wall",
+          "date": "2009",
+          "status": "Official",
+          "release-group": {
+            "id": "37d1888e-14c7-4bb6-a894-9895153447b7",
+            "title": "Thriller / Off the Wall",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "b8f457c0-a943-4225-878f-65d2301bd111",
+          "title": "Thriller",
+          "date": "2022-11-18",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Hybrid SACD (CD layer)"
+            }
+          ]
+        },
+        {
+          "id": "ec364a20-f95b-4dda-aa37-3bc5d466f96a",
+          "title": "Thriller / Off the Wall",
+          "date": "2009",
+          "status": "Official",
+          "release-group": {
+            "id": "37d1888e-14c7-4bb6-a894-9895153447b7",
+            "title": "Thriller / Off the Wall",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "490c27a4-7fef-4db5-9810-a3989adbf1d9",
+          "title": "Smooth FM Presents Music for Mum 2016",
+          "date": "2016",
+          "status": "Official",
+          "release-group": {
+            "id": "c82c6e63-cfc1-40f7-afa3-a7f8be50aae8",
+            "title": "Smooth FM Presents Music for Mum 2016",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Various Artists",
+              "joinphrase": "",
+              "artist": {
+                "name": "Various Artists"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "6bc026af-49ef-41f7-9b97-7a4ce2e0b71f",
+          "title": "From Q With Love",
+          "date": "1999-02-09",
+          "status": "Official",
+          "release-group": {
+            "id": "eac7f6e0-90f5-3203-9f47-1fcd8cd0dba6",
+            "title": "From Q, With Love",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Quincy Jones",
+              "joinphrase": "",
+              "artist": {
+                "name": "Quincy Jones"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "72445176-37e5-479e-ba7f-e1c5f6c16b37",
+          "title": "The Radio Essential Series",
+          "date": "2000",
+          "status": "Promotion",
+          "release-group": {
+            "id": "db3380c7-102c-482f-84dd-35b18d927cd0",
+            "title": "The Radio Essential Series",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Various Artists",
+              "joinphrase": "",
+              "artist": {
+                "name": "Various Artists"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "99c53164-4845-4994-9285-84e8d396cb2d",
+          "title": "Best Ballads",
+          "date": "1997",
+          "status": "Official",
+          "release-group": {
+            "id": "3908f8dc-a2e4-3df2-92e6-4fd5c53bbc28",
+            "title": "Best Ballads",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "6becd141-69a6-4c00-9b3d-08325cc31da5",
+          "title": "The Classics: A Tribute to a Legend",
+          "date": "2009",
+          "status": "Bootleg",
+          "release-group": {
+            "id": "775acfe7-05f0-4ec6-aae9-7702d65e62e0",
+            "title": "The Classics: A Tribute to a Legend",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "adea453b-0e4e-4d43-a281-fcbf85e18b57",
+          "title": "From Q, With Love",
+          "date": "1995-02-05",
+          "status": "Official",
+          "release-group": {
+            "id": "eac7f6e0-90f5-3203-9f47-1fcd8cd0dba6",
+            "title": "From Q, With Love",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Quincy Jones",
+              "joinphrase": "",
+              "artist": {
+                "name": "Quincy Jones"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "98180194-6c31-4659-a836-23b5ec49b203",
+          "title": "From Q, With Love",
+          "date": "2019-03-15",
+          "status": "Official",
+          "release-group": {
+            "id": "eac7f6e0-90f5-3203-9f47-1fcd8cd0dba6",
+            "title": "From Q, With Love",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Quincy Jones",
+              "joinphrase": "",
+              "artist": {
+                "name": "Quincy Jones"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "78d2dd62-4f58-4397-8376-19626997134f",
+          "title": "The Ultimate Collection",
+          "date": "2004-12-15",
+          "status": "Official",
+          "release-group": {
+            "id": "350247d7-db22-34be-a47a-072ded2c7709",
+            "title": "The Ultimate Collection",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "196971df-a7b6-3cdb-8e59-f43967cd29bf",
+          "title": "Thriller",
+          "date": "1983-06-06",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "6bc658fc-c2ad-38ec-a829-0cf8ffef53d8",
+          "title": "Thriller",
+          "date": "1982",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "359c3b04-6354-42fa-8438-11393b1e46a3",
+          "title": "Thriller",
+          "date": "1982",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "444889a0-a323-420a-8814-7e8a55e4ad08",
+          "title": "Thriller",
+          "date": "",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "6bd0c6f9-c8cf-411d-b9cb-2b7131e92c06",
+          "title": "Number Ones",
+          "status": "Official",
+          "release-group": {
+            "id": "8a0b8a6c-d6ff-33d3-83ad-106e39901282",
+            "title": "Number Ones",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "dae0ea2b-86e1-4d78-8d56-95b7fd77114f",
+          "title": "Thriller",
+          "date": "1982",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "fc7cc7d9-7173-4db7-8d46-2b20a8953429",
+          "title": "Thriller",
+          "date": "1982",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "49f5be6a-a73f-4a85-87dd-a14ea240a726",
+          "title": "Thriller",
+          "date": "1982",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "f7dbf356-f83a-4643-942c-8c1682d31fa6",
+          "title": "Thriller",
+          "date": "2008",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "11f8d386-9e42-4516-971c-6f1eb6981b38",
+          "title": "The Complete Thriller Sessions (Upgrade 2.0)",
+          "status": "Bootleg",
+          "release-group": {
+            "id": "2f660a46-247c-40d7-bf5d-4fc851d924de",
+            "title": "The Complete Thriller Sessions (Upgrade 2.0)",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "0f787556-f180-4e56-bbca-85fef9930b8b",
+          "title": "Off the Wall / Thriller",
+          "date": "2004-11-01",
+          "status": "Official",
+          "release-group": {
+            "id": "d968845a-5353-4858-af2b-358ff5741eb9",
+            "title": "Off the Wall / Thriller",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "5a3748b6-b3ad-4fca-bd92-3cf5dc604f91",
+          "title": "Thriller",
+          "date": "2009-10-22",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "f284d78d-69dd-4c69-82ad-20090be52029",
+          "title": "Thriller",
+          "date": "2022-11-18",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "bff900a2-e867-49fc-89f1-a8fd95491cf0",
+          "title": "This Is It",
+          "date": "2009-10-26",
+          "status": "Official",
+          "release-group": {
+            "id": "97b169da-67f4-4704-a7bf-5584df98ef3b",
+            "title": "This Is It",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "c4a560a3-bcec-423d-880c-13b88546e8ab",
+          "title": "King of Pop: Singapore Edition",
+          "date": "2009",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Enhanced CD"
+            }
+          ]
+        },
+        {
+          "id": "6a712238-f454-4e9a-bc8e-5561448b7bcb",
+          "title": "King of Pop: The Italian Fans’ Selection",
+          "date": "2008-10-03",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "7a92f51e-4e24-4e7f-b1fd-96c1c6360459",
+          "title": "Thriller",
+          "date": "1982",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "76b9d385-247e-4366-8d89-d3073210775f",
+          "title": "Thriller",
+          "date": "1991",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "884e8b9a-bcab-4f04-bf9c-ae7af9ae4ce6",
+          "title": "Thriller",
+          "date": "1982",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "80f9bca8-f73a-4d36-9bf8-33861e1fc949",
+          "title": "Thriller",
+          "date": "2022-11-18",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "b8f457c0-a943-4225-878f-65d2301bd111",
+          "title": "Thriller",
+          "date": "2022-11-18",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Hybrid SACD (SACD layer, 2 channels)"
+            }
+          ]
+        },
+        {
+          "id": "747647c7-f8da-451e-9d79-f7fa1b198db2",
+          "title": "Thriller",
+          "date": "1982",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "5cce1724-3337-4916-bbcf-ca9f4bf3acbc",
+          "title": "Thriller 40",
+          "date": "2022-11-18",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "abc6f265-4456-49d0-82c8-0be17c8eeb23",
+          "title": "Thriller 40",
+          "date": "2022-11-18",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "779da923-8fd4-4452-8582-4d3c2ca72ccf",
+          "title": "Thriller",
+          "date": "1985",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "8d7acf59-5275-44cc-b440-27844d47f70e",
+          "title": "The Collection",
+          "date": "2013",
+          "release-group": {
+            "id": "edd4a38b-2249-44d6-974f-a5567f6b2cad",
+            "title": "The Collection",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "c566050f-836c-3245-abbd-47d42106523c",
+          "title": "King of Pop: Deluxe UK Edition",
+          "date": "2008-09-29",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "afe24dda-fbee-4a2c-bd73-52605178fa7c",
+          "title": "Gold & Platinum - Hits of the '80s Vol. 1",
+          "date": "1999",
+          "status": "Official",
+          "release-group": {
+            "id": "d19a381e-496c-3645-b50b-7617fa13154c",
+            "title": "Gold & Platinum - Hits of the '80s Vol. 1",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Various Artists",
+              "joinphrase": "",
+              "artist": {
+                "name": "Various Artists"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "0881a2b7-2be3-4dfd-94f0-b186069802bd",
+          "title": "Thriller",
+          "date": "1982",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "b9faf041-5e90-462f-92af-1de7fb8a62a4",
+          "title": "Leave Me Alone",
+          "status": "Official",
+          "release-group": {
+            "id": "1788a097-19dd-4c27-b573-743d80928e6d",
+            "title": "Leave Me Alone",
+            "primary-type": "Single"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "ab1a3732-3af1-4d5f-b108-e272bdbb066a",
+          "title": "P.Y.T. (Pretty Young Thing)",
+          "date": "1984",
+          "status": "Official",
+          "release-group": {
+            "id": "2a3eedae-c375-4da3-b102-eb5601830ad9",
+            "title": "P.Y.T. (Pretty Young Thing)",
+            "primary-type": "Single"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "7\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "1b9a2156-aae7-4f18-886b-372ed5c039ce",
+          "title": "Thriller",
+          "date": "1985",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "e5d31a20-52d3-482a-8367-3d0ac5cfe6fc",
+          "title": "The Ultimate Rock Collection: Gold and Platinum",
+          "date": "1997",
+          "status": "Official",
+          "release-group": {
+            "id": "800d79b5-87fc-3522-bd09-1b243902ce0e",
+            "title": "The Ultimate Rock Collection: Gold and Platinum",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Various Artists",
+              "joinphrase": "",
+              "artist": {
+                "name": "Various Artists"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "09ab0aee-a7b2-4e95-8981-0476eaacc7d9",
+          "title": "Michael Jackson’s This Is It: The Music That Inspired the Movie",
+          "date": "2009-10-26",
+          "status": "Official",
+          "release-group": {
+            "id": "97b169da-67f4-4704-a7bf-5584df98ef3b",
+            "title": "This Is It",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "ba72c286-9eb2-4d24-949e-39a50419383a",
+          "title": "Thriller",
+          "date": "1982",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "6d4e49b7-78d6-4749-b7f0-169262b5c7f0",
+          "title": "Thriller",
+          "date": "2001",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "dc1fbc25-ff1d-4548-a0a2-6bd719582a0d",
+          "title": "Thriller",
+          "date": "",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "b9328760-43e3-4d6c-87d3-0d36439230e8",
+          "title": "Thriller",
+          "date": "2016",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "b04bf7d7-470c-30db-bb92-d62cb2fce285",
+          "title": "Number Ones",
+          "date": "2003-11-17",
+          "status": "Official",
+          "release-group": {
+            "id": "8a0b8a6c-d6ff-33d3-83ad-106e39901282",
+            "title": "Number Ones",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "82e080d2-fd29-41ac-8163-6f15b6a301b0",
+          "title": "Number Ones",
+          "date": "2008-03-25",
+          "status": "Official",
+          "release-group": {
+            "id": "8a0b8a6c-d6ff-33d3-83ad-106e39901282",
+            "title": "Number Ones",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "34cd85e2-38c6-435e-b243-76aa203b0aef",
+          "title": "Number Ones",
+          "date": "2003-11-17",
+          "status": "Official",
+          "release-group": {
+            "id": "8a0b8a6c-d6ff-33d3-83ad-106e39901282",
+            "title": "Number Ones",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "bc1c76d5-1d82-49df-a6c3-139c44fae9d1",
+          "title": "Thriller",
+          "date": "2014",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "55235c17-497d-45e7-b453-826f9797de7f",
+          "title": "Thriller",
+          "date": "2009-07-08",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "e9fd5395-94a3-4c0c-8c7e-edb8e131cdfa",
+          "title": "Thriller",
+          "date": "1991",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "a3620285-7bf2-4c14-8577-9203a9f0ded5",
+          "title": "Thriller",
+          "date": "1983",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "9c4c939e-5697-44d3-b2f2-b04226cf15f8",
+          "title": "Thriller",
+          "date": "1982",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "c9fe8519-dfd8-4489-a2fc-616934f42597",
+          "title": "Number Ones",
+          "date": "2003",
+          "status": "Official",
+          "release-group": {
+            "id": "8a0b8a6c-d6ff-33d3-83ad-106e39901282",
+            "title": "Number Ones",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "2b38df1b-142e-4109-8e0c-1cbe2ff65cfb",
+          "title": "King of Pop: The Korean Limited Edition",
+          "date": "2008-12-11",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "fd115dae-237d-3582-b845-49479ac50b5d",
+          "title": "King of Pop: The French Fans’ Selection",
+          "date": "2008-12-12",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "b1710260-e55a-4aef-8fe6-4c8021dae5cd",
+          "title": "King of Pop: The French Fans’ Selection",
+          "date": "2008-12-12",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "031c1f26-ab8b-488c-b793-e34a9340d245",
+          "title": "Thriller",
+          "date": "1999-11-23",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "SACD (2 channels)"
+            }
+          ]
+        },
+        {
+          "id": "f36aefb4-ccea-4e8b-af3e-83878568d5de",
+          "title": "80’s Passion",
+          "status": "Official",
+          "release-group": {
+            "id": "7c4e6587-ffb5-4716-9b1d-3ec0ddf1ace7",
+            "title": "80’s Passion",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Various Artists",
+              "joinphrase": "",
+              "artist": {
+                "name": "Various Artists"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "4e2bfe06-f483-4f7b-b12a-f74e2d1aa3f2",
+          "title": "Thriller",
+          "date": "2013-01-18",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "b274eaff-4dee-4b90-a182-fffb7cabc1e1",
+          "title": "King of Pop: Indonesia Collection",
+          "date": "2008",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "6e7f81e1-8915-4634-8c87-3ca4da5a58f6",
+          "title": "Thriller",
+          "date": "1988-10-26",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "7a325dc0-bc72-429c-ba49-43750be67a73",
+          "title": "Thriller",
+          "date": "1991-07-25",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "30ccc4c7-9217-4914-be1e-53d72ec38c7d",
+          "title": "Michael Jackson’s This Is It",
+          "date": "2009-10-27",
+          "status": "Official",
+          "release-group": {
+            "id": "97b169da-67f4-4704-a7bf-5584df98ef3b",
+            "title": "This Is It",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "13cf91c7-d870-46b3-93ef-110150451e5f",
+          "title": "Thriller 25",
+          "date": "2008",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "487d1bc5-902c-4539-8c2d-559cf9d26d74",
+          "title": "Number Ones",
+          "date": "2003",
+          "status": "Official",
+          "release-group": {
+            "id": "8a0b8a6c-d6ff-33d3-83ad-106e39901282",
+            "title": "Number Ones",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "1d9b9dce-6584-37c7-a2a8-fabca91136c2",
+          "title": "Thriller",
+          "date": "2001",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "680da302-ccde-453d-8f55-639421540d86",
+          "title": "Thriller",
+          "date": "1982",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "897b7802-6317-492f-8da1-d94e3bf9cba9",
+          "title": "Thriller",
+          "date": "1982-11-30",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "f7f5c684-faf2-4b1d-abaf-5343c00e8fa3",
+          "title": "Thriller",
+          "date": "1982",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Cassette"
+            }
+          ]
+        },
+        {
+          "id": "e1b94ba6-c63c-4c2d-8928-9d1a525b7000",
+          "title": "Thriller",
+          "date": "2013-06-29",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "a2c43f20-6646-4be7-9246-700bfd39a1e2",
+          "title": "King of Pop: The Austrian Limited Edition",
+          "date": "2008-08-29",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "38908dc9-aa23-4255-a88c-3ea3c5056e57",
+          "title": "Thriller",
+          "date": "2008-04-15",
+          "status": "Bootleg",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "3db98645-db27-4071-b564-2b53cc10d477",
+          "title": "Thriller 25",
+          "date": "2008-02-08",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "da0cca22-ddb1-4b5b-8021-cae686c37675",
+          "title": "Thriller",
+          "date": "1982-11-30",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "74cb8c7a-14ce-40f5-b178-2ac8f9e1f78b",
+          "title": "This Is It",
+          "date": "2009",
+          "status": "Official",
+          "release-group": {
+            "id": "97b169da-67f4-4704-a7bf-5584df98ef3b",
+            "title": "This Is It",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "8757ddf2-8473-4855-b230-e8fc4ac44c1c",
+          "title": "King of Pop: The Belgian Edition",
+          "date": "2008-08-25",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "f51feb3d-b8c1-40d7-8cc0-2115a9fc68fd",
+          "title": "Thriller",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "724049b1-c305-4968-9faf-3aae776183b1",
+          "title": "Number Ones",
+          "date": "2007-02-26",
+          "status": "Official",
+          "release-group": {
+            "id": "8a0b8a6c-d6ff-33d3-83ad-106e39901282",
+            "title": "Number Ones",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "cd95ad83-94cf-4384-a470-5942de9f85a3",
+          "title": "Guilty Pleasures: Shameless Blameless Fun",
+          "date": "2006-11-13",
+          "status": "Official",
+          "release-group": {
+            "id": "eb44cda0-a573-3dd8-8ec6-e4beae69ecb6",
+            "title": "Guilty Pleasures: Shameless Blameless Fun",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Various Artists",
+              "joinphrase": "",
+              "artist": {
+                "name": "Various Artists"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "6d9fabbd-b25c-45d4-ba69-260e497a0db4",
+          "title": "King of Pop: Brazilian Collection",
+          "date": "2008",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "4af9735c-e5a7-3885-ae3d-e404f36b3a25",
+          "title": "This Is It",
+          "date": "2009-10-27",
+          "status": "Official",
+          "release-group": {
+            "id": "97b169da-67f4-4704-a7bf-5584df98ef3b",
+            "title": "This Is It",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "289c58a2-79c0-37ae-afe5-b71205816d38",
+          "title": "This Is It",
+          "date": "2009",
+          "status": "Official",
+          "release-group": {
+            "id": "97b169da-67f4-4704-a7bf-5584df98ef3b",
+            "title": "This Is It",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "21a53a67-89c8-45a0-a52b-41ec0c62f7e7",
+          "title": "King of Pop: The Australian Collection",
+          "date": "2008-08-29",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "00c93939-65e2-4963-8977-6af858f1487a",
+          "title": "Best Ballads",
+          "date": "1997",
+          "status": "Bootleg",
+          "release-group": {
+            "id": "3908f8dc-a2e4-3df2-92e6-4fd5c53bbc28",
+            "title": "Best Ballads",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "747a7450-97cf-4302-b88e-37ba7131eb0f",
+          "title": "King of Pop: Polish Edition",
+          "date": "2008-10-20",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "ad28dba5-5fcd-4a6e-9872-53b3cc8a8c9b",
+          "title": "King of Pop: The Dutch Collection",
+          "date": "2008-08-29",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "6d958dd1-c0d4-4433-89bf-1f40b5f28b53",
+          "title": "The Collection",
+          "date": "2009-06-26",
+          "status": "Official",
+          "release-group": {
+            "id": "edd4a38b-2249-44d6-974f-a5567f6b2cad",
+            "title": "The Collection",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "959272f9-97ae-4179-aebe-950eef64ed93",
+          "title": "Thriller",
+          "date": "1982-12-01",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "81f42f01-b8a0-3086-9439-0d93b636bde5",
+          "title": "Thriller 25",
+          "date": "2008-02-11",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "70ae2fea-4cd1-3418-b577-849068bc3ec1",
+          "title": "Thriller 25",
+          "date": "2008-02-11",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "91fd6975-4055-407b-b117-2b8822fb6f46",
+          "title": "Thriller 25",
+          "date": "2008-02-11",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "75c43346-5cc0-3f60-b743-e511b0066994",
+          "title": "Thriller 25",
+          "date": "2008-02-11",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "c904b7e3-b80f-4ba7-9261-eed0afca600a",
+          "title": "Thriller 25",
+          "date": "2008-02-11",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "297f1384-63fd-321f-b98d-7eb3c58c4ee9",
+          "title": "Thriller 25",
+          "date": "2008-02-12",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "538e6fdf-7fdf-32bc-9996-fdf642f0868c",
+          "title": "Thriller 25",
+          "date": "2008-02-20",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "84cb43b2-274e-3a6c-8152-71b1c3d80562",
+          "title": "Thriller",
+          "date": "2008-08-29",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "28644744-519b-4212-b4c9-bc188360c6ec",
+          "title": "Thriller 25",
+          "date": "",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "60f5fd74-96d9-4582-badc-f0ef2aee6888",
+          "title": "Thriller",
+          "date": "1999",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "b04d4977-95ee-4f0a-b4f8-db65d7bf1fee",
+          "title": "Thriller 25",
+          "date": "2008-02-08",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "7a9ba230-8207-3d50-93bf-11fd3f33901a",
+          "title": "Thriller 25",
+          "date": "2008-02-12",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "9774b815-8ffa-4fd2-8eb5-c25539322a77",
+          "title": "Thriller",
+          "date": "2013-10-17",
+          "status": "Withdrawn",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "ce1396a4-cbe5-42d3-87d1-6f338906aab8",
+          "title": "Gone Too Soon",
+          "date": "1993-12-06",
+          "status": "Official",
+          "release-group": {
+            "id": "15764608-6099-4fda-aae0-b272f80bd057",
+            "title": "Gone Too Soon",
+            "primary-type": "Single"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "492c194a-ca55-4319-a9e6-5e7934a847b3",
+          "title": "In the Air Tonight",
+          "date": "2004",
+          "status": "Official",
+          "release-group": {
+            "id": "2a65892d-9b0c-4823-aaf9-483a1a5d2d0b",
+            "title": "In the Air Tonight",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Various Artists",
+              "joinphrase": "",
+              "artist": {
+                "name": "Various Artists"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "dcdb1959-3957-387a-ad9a-6b2f92f771bc",
+          "title": "Thriller 25",
+          "date": "2008-02-11",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "39898f04-c6a6-45c7-a785-31b4143dd7e1",
+          "title": "Thriller",
+          "date": "1982-11-30",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "bb445e39-e8e1-424d-b19a-46681510c34d",
+          "title": "Michael Jackson: The King Of Pop",
+          "date": "2010-04-07",
+          "status": "Official",
+          "release-group": {
+            "id": "ebcca47b-df2f-4544-9f4d-039de5e6cf02",
+            "title": "Michael Jackson: The King Of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "8b446df2-5ff7-4ef9-9af2-591151f67d17",
+          "title": "Michael Jackson: The King Of Pop",
+          "status": "Official",
+          "release-group": {
+            "id": "ebcca47b-df2f-4544-9f4d-039de5e6cf02",
+            "title": "Michael Jackson: The King Of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "1efac1af-b9df-48a2-bea1-44e550da93f5",
+          "title": "King of Pop: The Belgian Edition",
+          "date": "2008-08-25",
+          "status": "Official",
+          "release-group": {
+            "id": "4940f9c1-389b-3366-8745-e861adc1b95f",
+            "title": "King of Pop",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "24b09d94-c9e3-406f-8317-384d30ea6ea3",
+          "title": "This Is It",
+          "date": "2010-02-19",
+          "status": "Official",
+          "release-group": {
+            "id": "97b169da-67f4-4704-a7bf-5584df98ef3b",
+            "title": "This Is It",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        },
+        {
+          "id": "c06e8a09-879a-4015-9b6d-66a3fde9c3f4",
+          "title": "The Indispensable Collection",
+          "date": "2013-06-21",
+          "status": "Official",
+          "release-group": {
+            "id": "642c14a0-daf1-4a9e-9629-9cd0f2671cb9",
+            "title": "The Indispensable Collection",
+            "primary-type": "Album",
+            "secondary-types": [
+              "Compilation",
+              "Live",
+              "Remix"
+            ]
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "ae68a87b-26a7-4d6b-b5f2-b0883d63bde7",
+          "title": "Thriller",
+          "date": "2015-11-20",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "Digital Media"
+            }
+          ]
+        },
+        {
+          "id": "a62f918b-b62c-49df-b430-1f699302546b",
+          "title": "Thriller",
+          "date": "1982",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        },
+        {
+          "id": "c591da0f-ac9b-4d9d-8ce9-4f5c1914876a",
+          "title": "Thriller 25: The World’s Biggest Selling Album of All Time",
+          "date": "2008-02-20",
+          "status": "Official",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "CD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Human Nature = Човешка Природа",
+      "score": 82,
+      "video": null,
+      "first-release-date": "1982",
+      "artist-credit": [
+        {
+          "name": "Michael Jackson",
+          "joinphrase": "",
+          "artist": {
+            "name": "Michael Jackson"
+          }
+        }
+      ],
+      "releases": [
+        {
+          "id": "4ef97444-0066-4cbc-9951-7dd49b4544d0",
+          "title": "Thriller",
+          "date": "1982",
+          "release-group": {
+            "id": "f32fab67-77dd-3937-addc-9062e28e4c37",
+            "title": "Thriller",
+            "primary-type": "Album"
+          },
+          "artist-credit": [
+            {
+              "name": "Michael Jackson",
+              "joinphrase": "",
+              "artist": {
+                "name": "Michael Jackson"
+              }
+            }
+          ],
+          "media": [
+            {
+              "format": "12\" Vinyl"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+Music Downloader release packages include these separate programs:
+
+FFmpeg and FFprobe: GPL-licensed binaries distributed by eugeneware/ffmpeg-static.
+The exact platform license and build information are in tools/FFmpeg-LICENSE.txt
+and tools/FFmpeg-SOURCE.txt. Build source/provenance:
+https://github.com/eugeneware/ffmpeg-static/tree/b6.1.1
+https://github.com/eugeneware/ffmpeg-static/blob/b6.1.1/build/index.sh
+https://ffmpeg.org/download.html
+Consult the platform build's source site and corresponding-source requirements
+before redistributing modified builds. FFmpeg is invoked as a separate process.
+
+yt-dlp: https://github.com/yt-dlp/yt-dlp
+Source for the bundled version: https://github.com/yt-dlp/yt-dlp/releases
+See licenses/yt-dlp-LICENSE.txt. The standalone binaries also include Python
+and other dependencies; upstream's bundled executable licensing applies.
+
+Deno: https://github.com/denoland/deno (MIT)
+See licenses/denoland-LICENSE.txt and the source release for its dependencies.
+
+Bundled versions are recorded in tools/versions.json. Updated tools have their
+own versions.json and FFmpeg license/build information in the user's data folder.
+The application uses Fyne (BSD-3-Clause) and its Go dependencies as listed in
+go.mod / go.sum. Dependency license texts are included under licenses/go/ in CI
+release builds. Local builders can run go-licenses as documented in README.md.

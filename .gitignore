@@ -31,3 +31,9 @@ config.json
 
 .idea/
 .vscode/
+# Desktop bundles and downloaded dependencies
+/build/
+/dist/
+/tools/
+/music-downloader
+__pycache__/
