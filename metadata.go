@@ -9,6 +9,7 @@ import (
 	"net/url"
 	"regexp"
 	"sort"
+	"strconv"
 	"strings"
 	"sync"
 	"time"
@@ -21,38 +22,62 @@ const (
 	maximumAlternativeCovers = 5
 )
 
-// MusicBrainz allows one request per second. Share pacing across all download workers.
-var musicBrainzGate = make(chan struct{}, 1)
+// Each service shares pacing and cooldowns across all download workers.
+var musicBrainzRequests = metadataRequests{gate: make(chan struct{}, 1)}
+var coverArtRequests = metadataRequests{gate: make(chan struct{}, 1)}
 
-var musicBrainzLast time.Time
+type metadataRequests struct {
+	gate chan struct{}
+	next time.Time
+}
 
 var metadataCache = struct {
 	sync.Mutex
 	items map[string]TrackMetadata
 }{items: make(map[string]TrackMetadata)}
 
-func waitForMusicBrainz(ctx context.Context) error {
-	select {
-	case musicBrainzGate <- struct{}{}:
-	case <-ctx.Done():
-		return ctx.Err()
+func (d *MusicDownloader) metadataRequest(ctx context.Context, address string, requests *metadataRequests) (*http.Response, error) {
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, address, nil)
+	if err != nil {
+		return nil, err
 	}
-
-	delay := time.Until(musicBrainzLast.Add(1100 * time.Millisecond))
-	if delay > 0 {
-		timer := time.NewTimer(delay)
-		defer timer.Stop()
+	req.Header.Set("User-Agent", "MusicDownloader/"+version+" (https://github.com/"+releaseRepo+")")
+	for attempt := 0; ; attempt++ {
+		select {
+		case requests.gate <- struct{}{}:
+		case <-ctx.Done():
+			return nil, ctx.Err()
+		}
+		timer := time.NewTimer(time.Until(requests.next))
 		select {
 		case <-timer.C:
 		case <-ctx.Done():
-			<-musicBrainzGate
-			return ctx.Err()
+			timer.Stop()
+			<-requests.gate
+			return nil, ctx.Err()
 		}
+		requests.next = time.Now().Add(1100 * time.Millisecond)
+		res, err := d.client.Do(req)
+		if err != nil {
+			<-requests.gate
+			return nil, err
+		}
+		retry := res.StatusCode == 429 || res.StatusCode == 502 || res.StatusCode == 503 || res.StatusCode == 504
+		if retry {
+			delay := time.Duration(2<<attempt) * time.Second
+			if seconds, err := strconv.Atoi(res.Header.Get("Retry-After")); err == nil {
+				delay = max(delay, time.Duration(seconds)*time.Second)
+			} else if until, err := http.ParseTime(res.Header.Get("Retry-After")); err == nil {
+				delay = max(delay, time.Until(until))
+			}
+			requests.next = time.Now().Add(delay)
+		}
+		<-requests.gate
+		if !retry || attempt == 3 {
+			return res, nil
+		}
+		res.Body.Close()
 	}
-
-	musicBrainzLast = time.Now()
-	<-musicBrainzGate
-	return nil
 }
 
 func luceneQuote(s string) string {
@@ -78,10 +103,6 @@ func (d *MusicDownloader) metadata(ctx context.Context, t Track) (TrackMetadata,
 		return cached, nil
 	}
 
-	if err := waitForMusicBrainz(ctx); err != nil {
-		return TrackMetadata{}, err
-	}
-
 	query := url.Values{
 		"query": {
 			"recording:" + luceneQuote(t.Title) + " AND artist:" + luceneQuote(t.Artist) + " AND NOT video:true AND NOT comment:live",
@@ -89,14 +110,7 @@ func (d *MusicDownloader) metadata(ctx context.Context, t Track) (TrackMetadata,
 		"fmt":   {"json"},
 		"limit": {"100"},
 	}
-	req, err := http.NewRequestWithContext(ctx, "GET", "https://musicbrainz.org/ws/2/recording/?"+query.Encode(), nil)
-	if err != nil {
-		return TrackMetadata{}, err
-	}
-
-	req.Header.Set("User-Agent", "MusicDownloader/"+version+" (https://github.com/"+releaseRepo+")")
-	req.Header.Set("Accept", "application/json")
-	res, err := d.client.Do(req)
+	res, err := d.metadataRequest(ctx, "https://musicbrainz.org/ws/2/recording/?"+query.Encode(), &musicBrainzRequests)
 	if err != nil {
 		return TrackMetadata{}, err
 	}

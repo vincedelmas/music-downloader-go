@@ -138,7 +138,7 @@ func TestExistingFilesAreSkipped(t *testing.T) {
 			event = e
 		},
 	)
-	if err != nil || event.State != "Skipped" {
+	if err != nil || event.State != "Already downloaded" {
 		t.Fatalf("%+v, %v", event, err)
 	}
 }

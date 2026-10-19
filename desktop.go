@@ -36,10 +36,11 @@ func buildDesktop(application fyne.App) fyne.Window {
 	progress := widget.NewProgressBar()
 	// Downloads, selection, and progress.
 	var tracks []Track
-	var rows []string
+	var states []string
+	var visible []int
 	var details []string
 	list := widget.NewList(func() int {
-		return len(rows)
+		return len(visible)
 	}, func() fyne.CanvasObject {
 		name := widget.NewLabel("")
 		name.TextStyle.Bold = true
@@ -49,27 +50,66 @@ func buildDesktop(application fyne.App) fyne.Window {
 		return container.NewBorder(nil, nil, widget.NewIcon(theme.MediaMusicIcon()), state, name)
 	}, func(i widget.ListItemID, o fyne.CanvasObject) {
 		row := o.(*fyne.Container)
-		parts := strings.SplitN(rows[i], "  ·  ", 2)
-		name := rows[i]
-		if len(parts) > 1 {
-			name = parts[1]
+		index := visible[i]
+		row.Objects[0].(*widget.Label).SetText(tracks[index].Name)
+		label := row.Objects[2].(*widget.Label)
+		label.SetText(states[index])
+		label.Importance = widget.LowImportance
+		switch trackStateGroup(states[index]) {
+		case "Warnings":
+			label.Importance = widget.WarningImportance
+		case "Failed":
+			label.Importance = widget.DangerImportance
+		case "Completed":
+			label.Importance = widget.SuccessImportance
 		}
 
-		row.Objects[0].(*widget.Label).SetText(name)
-		row.Objects[2].(*widget.Label).SetText(parts[0])
 		row.Refresh()
 	})
 	detail := widget.NewLabel("Select a track for details.")
 	detail.Wrapping = fyne.TextWrapWord
 	selected := -1
 	list.OnSelected = func(i widget.ListItemID) {
-		selected = i
-		detail.SetText(details[i])
+		selected = visible[i]
+		detail.SetText(details[selected])
 	}
 	list.OnUnselected = func(widget.ListItemID) {
 		selected = -1
 		detail.SetText("Select a track for details.")
 	}
+	groups := []string{"Queued", "In progress", "Completed", "Warnings", "Failed", "Skipped", "Cancelled"}
+	filter := widget.NewSelect(append([]string{"All"}, groups...), nil)
+	filter.SetSelected("All")
+	counts := widget.NewLabel("")
+	counts.Wrapping = fyne.TextWrapWord
+	refreshList := func() {
+		previous := selected
+		list.UnselectAll()
+		visible = nil
+		totals := make(map[string]int)
+		for i, state := range states {
+			group := trackStateGroup(state)
+			totals[group]++
+			if filter.Selected == "All" || filter.Selected == group {
+				visible = append(visible, i)
+			}
+		}
+		var summary []string
+		for _, group := range groups {
+			if totals[group] > 0 {
+				summary = append(summary, fmt.Sprintf("%d %s", totals[group], strings.ToLower(group)))
+			}
+		}
+		counts.SetText(strings.Join(summary, "  ·  "))
+		list.Refresh()
+		for i, index := range visible {
+			if index == previous {
+				list.Select(i)
+				break
+			}
+		}
+	}
+	filter.OnChanged = func(string) { refreshList() }
 	var cancel context.CancelFunc
 	busy := false
 	var controls []fyne.Disableable
@@ -104,24 +144,32 @@ func buildDesktop(application fyne.App) fyne.Window {
 	})
 	stop.Disable()
 	load := widget.NewButtonWithIcon("Load bookmarks", theme.ViewRefreshIcon(), func() {
-		var err error
-		tracks, err = parseBookmarks(config)
+		loaded, err := parseBookmarks(config)
 		if err != nil {
 			showErr(err)
 			return
 		}
 
-		rows = make([]string, len(tracks))
-		details = make([]string, len(tracks))
-		for i, t := range tracks {
-			rows[i] = "Queued  ·  " + t.Name
-			details[i] = t.URL
-		}
-
 		list.UnselectAll()
-		list.Refresh()
+		visible = nil
+		tracks = loaded
+		states = make([]string, len(tracks))
+		details = make([]string, len(tracks))
+		files, duplicate := trackPaths(config.MusicDirectory, tracks)
+		for i, t := range tracks {
+			states[i] = "Queued"
+			details[i] = t.URL
+			if duplicate[i] {
+				states[i], details[i] = "Skipped", "Duplicate link"
+			} else if _, err := os.Stat(files[i]); err == nil {
+				states[i], details[i] = "Already downloaded", files[i]
+			} else if !os.IsNotExist(err) {
+				states[i], details[i] = "Failed", err.Error()
+			}
+		}
+		refreshList()
 		progress.SetValue(0)
-		status.SetText(fmt.Sprintf("%d YouTube tracks found. Ready to download.", len(tracks)))
+		status.SetText(fmt.Sprintf("%d YouTube tracks found. Existing files will be skipped.", len(tracks)))
 	})
 	runBatch := func(refreshOnly bool) {
 		if len(tracks) == 0 {
@@ -161,15 +209,11 @@ func buildDesktop(application fyne.App) fyne.Window {
 				eventMu.Lock()
 				defer eventMu.Unlock()
 				fyne.Do(func() {
-					rows[e.Index] = e.State + "  ·  " + batch[e.Index].Name
+					states[e.Index] = e.State
 					details[e.Index] = e.Detail
-					list.RefreshItem(e.Index)
-					if selected == e.Index {
-						detail.SetText(e.Detail)
-					}
-
+					refreshList()
 					switch e.State {
-					case "Completed", "Updated", "Saved with warning", "Skipped", "Failed", "Cancelled":
+					case "Completed", "Updated", "Saved with warning", "Already downloaded", "Skipped", "Failed", "Cancelled":
 						done++
 						progress.SetValue(float64(done) / float64(len(batch)))
 					}
@@ -195,7 +239,7 @@ func buildDesktop(application fyne.App) fyne.Window {
 					if refreshOnly {
 						status.SetText("Song details refreshed.")
 					} else {
-						status.SetText("Finished. Your music is ready.")
+						status.SetText("Finished. Check the status counts and select a track for details.")
 					}
 				}
 			})
@@ -221,6 +265,8 @@ func buildDesktop(application fyne.App) fyne.Window {
 			pageHeading("Your music", "Download from your bookmark collection."),
 			container.NewHBox(load, start, refreshDetails, openMusic),
 			progress,
+			container.NewBorder(nil, nil, widget.NewLabel("Show"), nil, filter),
+			counts,
 		),
 		container.NewVBox(widget.NewSeparator(), detail),
 		nil,
@@ -368,9 +414,9 @@ func buildDesktop(application fyne.App) fyne.Window {
 		config = next
 		list.UnselectAll()
 		tracks = nil
-		rows = nil
+		states = nil
 		details = nil
-		list.Refresh()
+		refreshList()
 		status.SetText("Settings saved. Load your bookmarks when ready.")
 
 	})
@@ -572,4 +618,17 @@ func buildDesktop(application fyne.App) fyne.Window {
 	}
 
 	return window
+}
+
+func trackStateGroup(state string) string {
+	switch state {
+	case "Downloading", "Tagging":
+		return "In progress"
+	case "Completed", "Updated", "Already downloaded":
+		return "Completed"
+	case "Saved with warning":
+		return "Warnings"
+	default:
+		return state
+	}
 }

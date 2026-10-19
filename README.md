@@ -34,11 +34,15 @@ For a bookmark named `Daft Punk - One More Time`, use:
 
 You can also write `{artist} {-} {title}`, or reverse the order with `{title} - {artist}`. Include `{artist}` and `{title}` once each, with your separator between them.
 
-Nested bookmark folders are supported. Existing downloads are skipped. Select a track to see its status or any errors, and use **Cancel** to stop a batch.
+Nested bookmark folders are supported. Loading bookmarks checks the selected music directory and marks matching MP3 filenames as **Already downloaded**. Downloads check again before fetching audio, so existing files are skipped even after restarting the app. Renamed or moved files will not be recognized.
+
+Use **Show** to filter queued, active, completed, warning, failed, skipped, or cancelled tracks. Status counts stay visible for the whole collection. Select a track to see its details or any errors, and use **Cancel** to stop a batch.
 
 ## Song details and covers
 
 Enable **Add song details and album artwork** in Preferences to add the artist, title, album, year, and cover automatically. Matching prefers studio albums over live recordings and video releases. Some songs or covers may be missing from the database.
+
+Requests for details and covers are paced across download workers. Temporary HTTP failures are retried up to three times with increasing delays, respecting the server's retry time. **Saved with warning** means the audio was downloaded but some details or artwork could not be added.
 
 To fix the details or cover of an existing download, load your bookmarks and click **Refresh song details**. This updates the MP3 without downloading or re-encoding its audio.
 

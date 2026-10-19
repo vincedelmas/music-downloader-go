@@ -304,7 +304,7 @@ func (d *MusicDownloader) processBatch(ctx context.Context, tracks []Track, emit
 				}
 
 				if !refreshOnly && exists {
-					emit(TrackEvent{i, "Skipped", "File already exists"})
+					emit(TrackEvent{i, "Already downloaded", files[i]})
 					continue
 				}
 
@@ -439,12 +439,7 @@ func (d *MusicDownloader) fetchCover(ctx context.Context, coverURL, dir string) 
 		return "", nil
 	}
 
-	req, err := http.NewRequestWithContext(ctx, "GET", coverURL, nil)
-	if err != nil {
-		return "", err
-	}
-
-	res, err := d.client.Do(req)
+	res, err := d.metadataRequest(ctx, coverURL, &coverArtRequests)
 	if err != nil {
 		return "", fmt.Errorf("artwork unavailable: %w", err)
 	}

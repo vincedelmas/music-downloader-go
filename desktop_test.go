@@ -21,7 +21,7 @@ func TestDesktopLoadsBookmarks(t *testing.T) {
 	c := testConfig(t)
 	if err := os.WriteFile(
 		c.BookmarkPath,
-		[]byte(`{"roots":{"bookmark_bar":{"children":[{"type":"folder","name":"Music","children":[{"type":"url","name":"Artist - Song","url":"https://youtu.be/abc"}]}]}}}`),
+		[]byte(`{"roots":{"bookmark_bar":{"children":[{"type":"folder","name":"Music","children":[{"type":"url","name":"Artist - Song","url":"https://youtu.be/abc"},{"type":"url","name":"Other - Track","url":"https://youtu.be/def"}]}]}}}`),
 		0600,
 	); err != nil {
 		t.Fatal(err)
@@ -31,6 +31,9 @@ func TestDesktopLoadsBookmarks(t *testing.T) {
 		t.Fatal(err)
 	}
 
+	if err := os.WriteFile(filepath.Join(c.MusicDirectory, "Artist - Song.mp3"), []byte("existing"), 0600); err != nil {
+		t.Fatal(err)
+	}
 	a := test.NewApp()
 	defer a.Quit()
 	w := buildDesktop(a)
@@ -60,6 +63,8 @@ func TestDesktopLoadsBookmarks(t *testing.T) {
 
 	var load *widget.Button
 	var tracks *widget.List
+	var filter *widget.Select
+	var labels []*widget.Label
 	var walk func(fyne.CanvasObject)
 	walk = func(o fyne.CanvasObject) {
 		switch v := o.(type) {
@@ -69,6 +74,12 @@ func TestDesktopLoadsBookmarks(t *testing.T) {
 			}
 		case *widget.List:
 			tracks = v
+		case *widget.Select:
+			if len(v.Options) > 0 && v.Options[0] == "All" {
+				filter = v
+			}
+		case *widget.Label:
+			labels = append(labels, v)
 		case *fyne.Container:
 			for _, child := range v.Objects {
 				walk(child)
@@ -81,8 +92,40 @@ func TestDesktopLoadsBookmarks(t *testing.T) {
 	}
 
 	test.Tap(load)
-	if tracks.Length() != 1 {
-		t.Fatalf("expected one loaded track, got %d", tracks.Length())
+	if tracks.Length() != 2 {
+		t.Fatalf("expected two loaded tracks, got %d", tracks.Length())
+	}
+	if filter == nil {
+		t.Fatal("status filter missing")
+	}
+	for _, choice := range []struct{ group, detail string }{
+		{"Completed", filepath.Join(c.MusicDirectory, "Artist - Song.mp3")},
+		{"Queued", "https://youtu.be/def"},
+	} {
+		filter.SetSelected(choice.group)
+		if tracks.Length() != 1 {
+			t.Fatalf("%s: expected one track, got %d", choice.group, tracks.Length())
+		}
+		tracks.Select(0)
+		found := false
+		for _, label := range labels {
+			if label.Text == choice.detail {
+				found = true
+			}
+		}
+		if !found {
+			t.Fatalf("%s: selected track details do not match %q", choice.group, choice.detail)
+		}
+	}
+	filter.SetSelected("Warnings")
+	if tracks.Length() != 0 {
+		t.Fatal("existing files must not be queued or warnings")
+	}
+	filter.SetSelected("All")
+	tracks.Select(1)
+	test.Tap(load)
+	if tracks.Length() != 2 {
+		t.Fatal("reloading bookmarks lost tracks")
 	}
 	// Confirm a build without a bundled tools folder still opens settings instead of exiting.
 	tabs.SelectIndex(1)

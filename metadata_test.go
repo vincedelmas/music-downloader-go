@@ -27,9 +27,11 @@ func resetMetadata(t *testing.T) {
 	metadataCache.Lock()
 	metadataCache.items = make(map[string]TrackMetadata)
 	metadataCache.Unlock()
-	musicBrainzLast = time.Time{}
+	musicBrainzRequests.next = time.Time{}
+	coverArtRequests.next = time.Time{}
 	t.Cleanup(func() {
-		musicBrainzLast = time.Time{}
+		musicBrainzRequests.next = time.Time{}
+		coverArtRequests.next = time.Time{}
 	})
 }
 
@@ -90,18 +92,80 @@ func TestMusicBrainzRejectsWeakMatch(t *testing.T) {
 
 func TestMetadataRateLimitCancellation(t *testing.T) {
 	resetMetadata(t)
-	if err := waitForMusicBrainz(context.Background()); err != nil {
-		t.Fatal(err)
+	d := newDownloader(testConfig(t), ToolSet{})
+	d.client.Transport = metadataTransport(func(*http.Request) (*http.Response, error) {
+		t.Error("cancelled wait must not send a request")
+		return nil, context.Canceled
+	})
+	for _, requests := range []*metadataRequests{&musicBrainzRequests, &coverArtRequests} {
+		requests.next = time.Now().Add(time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 20*time.Millisecond)
+		_, err := d.metadataRequest(ctx, "https://example.org", requests)
+		cancel()
+		if err != context.DeadlineExceeded {
+			t.Fatalf("expected cancelled wait, got %v", err)
+		}
+		if len(requests.gate) != 0 {
+			t.Fatal("cancelled lookup held the rate-limit gate")
+		}
 	}
+}
 
-	ctx, cancel := context.WithTimeout(context.Background(), 20*time.Millisecond)
-	defer cancel()
-	if err := waitForMusicBrainz(ctx); err != context.DeadlineExceeded {
-		t.Fatalf("expected cancel during rate-limit wait, got %v", err)
+func TestMetadataRequestRetries(t *testing.T) {
+	for _, status := range []int{429, 502, 503, 504, 404} {
+		t.Run(http.StatusText(status), func(t *testing.T) {
+			d := newDownloader(testConfig(t), ToolSet{})
+			requests := metadataRequests{gate: make(chan struct{}, 1)}
+			calls := 0
+			var first time.Time
+			d.client.Transport = metadataTransport(func(req *http.Request) (*http.Response, error) {
+				if req.Header.Get("User-Agent") == "" {
+					t.Error("missing identifying User-Agent")
+				}
+				calls++
+				code := http.StatusOK
+				if calls == 1 {
+					first = time.Now()
+					code = status
+				}
+				return &http.Response{StatusCode: code, Header: http.Header{"Retry-After": {"3"}}, Body: io.NopCloser(strings.NewReader(""))}, nil
+			})
+			res, err := d.metadataRequest(context.Background(), "https://example.org", &requests)
+			if err != nil {
+				t.Fatal(err)
+			}
+			res.Body.Close()
+			if status == 404 {
+				if calls != 1 || res.StatusCode != 404 {
+					t.Fatal("missing artwork should not be retried")
+				}
+			} else if calls != 2 || res.StatusCode != 200 || time.Since(first) < 3*time.Second {
+				t.Fatalf("retry ignored backoff: calls=%d status=%d elapsed=%v", calls, res.StatusCode, time.Since(first))
+			}
+		})
 	}
-	// Cancellation must release the gate for the next worker.
-	if len(musicBrainzGate) != 0 {
-		t.Fatal("cancelled lookup held the rate-limit gate")
+}
+
+func TestMetadataRequestSharedCooldown(t *testing.T) {
+	d := newDownloader(testConfig(t), ToolSet{})
+	requests := metadataRequests{gate: make(chan struct{}, 1)}
+	ctx, cancel := context.WithCancel(context.Background())
+	calls := 0
+	d.client.Transport = metadataTransport(func(*http.Request) (*http.Response, error) {
+		calls++
+		cancel()
+		return &http.Response{StatusCode: 503, Header: http.Header{"Retry-After": {"60"}}, Body: io.NopCloser(strings.NewReader(""))}, nil
+	})
+	if _, err := d.metadataRequest(ctx, "https://example.org", &requests); err != context.Canceled {
+		t.Fatalf("got %v", err)
+	}
+	nextCtx, stop := context.WithTimeout(context.Background(), 20*time.Millisecond)
+	defer stop()
+	if _, err := d.metadataRequest(nextCtx, "https://example.org/other", &requests); err != context.DeadlineExceeded {
+		t.Fatalf("got %v", err)
+	}
+	if calls != 1 {
+		t.Fatal("another worker bypassed the shared cooldown")
 	}
 }
 
