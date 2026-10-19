@@ -100,6 +100,16 @@ go vet ./...
 go test -race -tags ci ./...
 ```
 
+## Repository layout
+
+- `main.go`: application entry point and release version injected during packaging.
+- `internal/app/`: desktop UI, bookmarks, downloading, metadata, settings, installation, and updates. Tests sit beside the code they exercise; metadata fixtures live in `internal/app/testdata/`.
+- `assets/`: application icons and their embedded Go resource.
+- `cmd/bundle/`: packaging command and its tests.
+- `scripts/`: Linux installation and Windows installer scripts.
+
+Build output and downloaded tools belong in the ignored `build/`, `dist/`, and `tools/` directories. Release executables are distributed through GitHub Releases.
+
 ## Releases
 
 [Release Please](https://github.com/googleapis/release-please) creates release PRs from conventional commits such as `feat:` and `fix:`. Squash and merge the release PR into `main` to publish a version and build the packages.

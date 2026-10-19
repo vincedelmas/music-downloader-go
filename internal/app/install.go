@@ -1,4 +1,4 @@
-package main
+package app
 
 import (
 	"fmt"
@@ -7,6 +7,8 @@ import (
 	"path/filepath"
 	"runtime"
 	"strings"
+
+	"music-downloader-go/assets"
 )
 
 func runtimeInstallAvailable() bool {
@@ -123,7 +125,7 @@ func installForUser() error {
 		}
 	}
 
-	if err = os.WriteFile(filepath.Join(stage, "icon.png"), appIcon.Content(), 0644); err != nil {
+	if err = os.WriteFile(filepath.Join(stage, "icon.png"), assets.Icon.Content(), 0644); err != nil {
 		return err
 	}
 

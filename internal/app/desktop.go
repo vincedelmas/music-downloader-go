@@ -1,4 +1,4 @@
-package main
+package app
 
 import (
 	"context"
@@ -10,6 +10,8 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"music-downloader-go/assets"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
@@ -25,7 +27,7 @@ func runDesktop() {
 }
 
 func buildDesktop(application fyne.App) fyne.Window {
-	application.SetIcon(appIcon)
+	application.SetIcon(assets.Icon)
 	application.Settings().SetTheme(newDesktopTheme())
 	window := application.NewWindow("Music Downloader")
 	window.Resize(fyne.NewSize(1040, 780))
